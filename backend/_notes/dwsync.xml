@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="index.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3578186899" remote="318763443971083411" />
+<file name="h.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577526839" remote="318763443970423351" />
+<file name="f.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577512869" remote="318763443970409381" />
+<file name="banner.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577445970" remote="318763443970342482" />
+<file name="menu.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3578186210" remote="318763443971082722" />
+<file name="mm.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577512152" remote="318763443970408664" />
+<file name="access.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577511659" remote="318763443970408171" />
+<file name="list_admin.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577705891" remote="318763443970602403" />
+<file name="datatable.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3578182647" remote="318763443971079159" />
+<file name="add_admin.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577516425" remote="318763443970412937" />
+<file name="add_admin_db.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577514101" remote="318763443970410613" />
+<file name="del_admin.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577518387" remote="318763443970414899" />
+<file name="edit_admin.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577599807" remote="318763443970496319" />
+<file name="edit_admin_db.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577514872" remote="318763443970411384" />
+<file name="add_product_type.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577518297" remote="318763443970414809" />
+<file name="list_product_type.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577705293" remote="318763443970601805" />
+<file name="del_product_type.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577518380" remote="318763443970414892" />
+<file name="edit_product_type.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577518588" remote="318763443970415100" />
+<file name="list_product.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3578183671" remote="318763443971080183" />
+<file name="add_product.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577529434" remote="318763443970425946" />
+<file name="add_product_db.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577530031" remote="318763443970426543" />
+<file name="del_product.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577530815" remote="318763443970427327" />
+<file name="edit_product.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577599797" remote="318763443970496309" />
+<file name="edit_product_db.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577599490" remote="318763443970496002" />
+<file name="edit-ok.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3577599728" remote="318763443970496240" />
+<file name="show_new_cart.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3578183240" remote="318763443971079752" />
+<file name="datatable2.php" server="OS/Applications/XAMPP/xamppfiles/htdocs/stock/" local="3578186104" remote="318763443971082616" />
+<file name="h.php" server="C:/AppServ/www/stdshop/" local="131391556400000000" remote="131391556400000000" />
+<file name="datatable.php" server="C:/AppServ/www/stdshop/" local="131398114480000000" remote="131398114480000000" />
+<file name="banner.php" server="C:/AppServ/www/stdshop/" local="131390747700000000" remote="131390747700000000" />
+<file name="mm.php" server="C:/AppServ/www/stdshop/" local="131391409520000000" remote="131391409520000000" />
+<file name="menu.php" server="C:/AppServ/www/stdshop/" local="131486219563105786" remote="131486219560000000" />
+<file name="show_new_cart.php" server="C:/AppServ/www/stdshop/" local="131486214792802940" remote="131486214790000000" />
+<file name="f.php" server="C:/AppServ/www/stdshop/" local="131485358820354305" remote="131485358820000000" />
+<file name="index.php" server="C:/AppServ/www/stdshop/" local="131486206522859926" remote="131486206520000000" />
+<file name="access.php" server="C:/AppServ/www/stdshop/" local="131391404600000000" remote="131391404600000000" />
+<file name="add_bank.php" server="C:/AppServ/www/stdshop/" local="131485673698760641" remote="131485673690000000" />
+<file name="add_bank_db.php" server="C:/AppServ/www/stdshop/" local="131485676442697585" remote="131485676440000000" />
+<file name="show_cart_pay.php" server="C:/AppServ/www/stdshop/" local="131486214555449364" remote="131486214550000000" />
+<file name="show_cart_post.php" server="C:/AppServ/www/stdshop/" local="131486215533555309" remote="131486215530000000" />
+<file name="status.php" server="C:/AppServ/www/stdshop/" local="131486214238791252" remote="131486214230000000" />
+<file name="show_cart_pay.php" server="C:/xampp/htdocs/myshop/" local="131779555551899437" remote="131779555550000000" />
+</dwsync>
