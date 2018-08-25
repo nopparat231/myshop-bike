@@ -1,4 +1,6 @@
-<?php include('h.php');?>
+<?php 
+ob_start();
+include('h.php');?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +31,9 @@
           <?php include('category.php');?>
           <br />
          
-           <a href="http://track.thailandpost.co.th/tracking/default.aspx" target="bank_"><img src="img/ems.png" class="rounded float-left" width="100%" /></a>
+           <a href="http://track.thailandpost.co.th/tracking/default.aspx" target="bank_">
+
+            <img src="img/ems.png" class="rounded float-left" width="100%" /></a>
            <br />
             <a href="https://facebook.com" target="bank_"><img src="img/logof.png" class="rounded float-left" width="100%" /></a>
      

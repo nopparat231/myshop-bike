@@ -4,13 +4,14 @@
 <script>		
 $(document).ready(function() {
 
-    $('#example').DataTable( {
-
-      "aaSorting" :[[0,'desc']],
-
-	  //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
-
-	});
+    if ( $.fn.dataTable.isDataTable( '#example' ) ) {
+    table = $('#example').DataTable();
+}
+else {
+    table = $('#example').DataTable( {
+        paging: false
+    } );
+}
 
 } );
 </script>
