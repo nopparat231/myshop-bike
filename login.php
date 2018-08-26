@@ -47,11 +47,11 @@ if (isset($_POST['mem_username'])) {
   $password=$_POST['mem_password'];
   $MM_fldUserAuthorization = "";
   $MM_redirectLoginSuccess = "index.php";
-  $MM_redirectLoginFailed = "login.php";
+  $MM_redirectLoginFailed = "login_alert.php";
   $MM_redirecttoReferrer = false;
 mysql_select_db($database_condb);
   
-  $LoginRS__query=sprintf("SELECT mem_username, mem_password FROM tbl_member WHERE mem_username=%s AND mem_password=%s",
+  $LoginRS__query=sprintf("SELECT mem_username, mem_password FROM tbl_member WHERE mem_username=%s AND mem_password=%s  AND active='yes'",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
    
   $LoginRS = mysql_query($LoginRS__query, $condb) or die(mysql_error());
@@ -114,7 +114,8 @@ mysql_select_db($database_condb);
                       <div class="col-sm-12">
                         <button type="submit" class="btn btn-primary" id="btn">
                         <span class="glyphicon glyphicon-log-in"> </span>
-                         Login </button>
+                         เข้าสู่ระบบ </button>
+                        <a href="reset_password.php" type="submit"> ลืมรหัสผ่าน</a>
                       </div>
                     </div>
                   </form>
@@ -126,10 +127,6 @@ mysql_select_db($database_condb);
  </div>
 
  
- 
- 
- 
-   
   </body>
 </html>
 <?php include('f.php');?>
