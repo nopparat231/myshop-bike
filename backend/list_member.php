@@ -54,7 +54,7 @@ $totalRows_mem = mysql_num_rows($mem);
    </div>
   	<div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN : <?php include('mm.php');?> </b>
+        
         <br>
         <?php include('menu.php');?>
       </div>

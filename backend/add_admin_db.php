@@ -7,6 +7,10 @@ error_reporting( error_reporting() & ~E_NOTICE );
 $admin_user = $_POST['admin_user'];
 $admin_pass = $_POST['admin_pass'];
 $admin_name = $_POST['admin_name'];
+$admin_tel = $_POST['admin_tel'];
+$admin_address = $_POST['admin_address'];
+$admin_email = $_POST['admin_email'];
+$status = $_POST['status'];
 
 
 $check ="SELECT * FROM tbl_admin  WHERE admin_user='$admin_user'";
@@ -24,12 +28,11 @@ if($num > 0)
 
 
 $sql ="INSERT INTO tbl_admin
-
-		(admin_user,  admin_pass, admin_name)
+		(admin_user,  admin_pass, admin_name ,status ,mem_tel ,mem_address ,mem_email)
 
 		VALUES
 
-		('$admin_user', '$admin_pass', '$admin_name')";
+		('$admin_user', '$admin_pass', '$admin_name' ,'$status' ,'$mem_tel' ,'$mem_address' ,'$mem_email')";
 
 		$result = mysql_query($sql, $condb) or die("Error in query : $sql" .mysql_error());
 }

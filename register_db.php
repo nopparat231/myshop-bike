@@ -14,7 +14,7 @@ $mem_address = $_POST['mem_address'];
 $user = "user";
 $session_id = session_id();
 $no = "no";
-
+mysql_select_db($database_condb);
 $check = "SELECT * FROM tbl_member WHERE mem_username = '$mem_username'";
 $result = mysql_query($check,$condb);
 $num = mysql_num_rows($result);

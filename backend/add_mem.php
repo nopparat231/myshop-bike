@@ -15,7 +15,7 @@
    </div>
   	<div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN: <?php include('mm.php');?> </b>
+       
         <br>
         <?php include('menu.php');?>        	 
       </div>
@@ -71,6 +71,11 @@
           </div>
         </div>
         
+        
+      <input type="hidden" name="status" value="user" />
+      <input type="hidden" name="sid" value="AddByAdmin" />
+      <input type="hidden" name="active" value="yes" />
+
   
         
       <div class="form-group">

@@ -71,6 +71,8 @@ $totalRows_buyer = mysql_num_rows($buyer);
 	require_once('Connections/condb.php');
 $total = 0;
 
+if ($totalRows_buyer > 0) {
+
 
  	foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
 	{
@@ -150,9 +152,12 @@ $total = 0;
   </div>
 </div>
 <?php
+}
  } else{  
   include('logout3.php'); 
  }//seseion
  
 mysql_free_result($buyer);
 ?>
+<br>
+<br>

@@ -20,7 +20,7 @@ include('access.php');?>
    </div>
   	<div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN : <?php include('mm.php');?> </b>
+        
         <br />
         <span id="hp">
         <?php include('menu.php');?>

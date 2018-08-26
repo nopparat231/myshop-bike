@@ -10,6 +10,9 @@ $mem_name = $_POST['mem_name'];
 $mem_tel = $_POST['mem_tel'];
 $mem_address = $_POST['mem_address'];
 $mem_email = $_POST['mem_email'];
+$status = $_POST['status'];
+$sid = $_POST['sid'];
+$active = $_POST['active'];
 
 
 
@@ -29,12 +32,12 @@ if($num > 0)
 
 
 $sql ="INSERT INTO tbl_member
-
-		(mem_username,  mem_password, mem_name , mem_tel ,mem_address ,mem_email)
+(mem_username,  mem_password, mem_name , mem_tel ,mem_address ,mem_email ,status ,sid ,active)
 
 		VALUES
 
-		('$mem_username', '$mem_password', '$mem_name' , '$mem_tel' ,'$mem_address' ,'$mem_email')";
+		('$mem_username', '$mem_password', '$mem_name' , '$mem_tel' ,'$mem_address' ,'$mem_email' ,'$status' , '$sid','$active')";
+
 
 		$result = mysql_query($sql, $condb) or die("Error in query : $sql" .mysql_error());
 }

@@ -41,7 +41,6 @@ $mm = mysql_query($query_mm, $condb) or die(mysql_error());
 $row_mm = mysql_fetch_assoc($mm);
 $totalRows_mm = mysql_num_rows($mm);
 ?>
-<?php echo $row_mm['admin_name'];?>
 
 <?php
 mysql_free_result($mm);

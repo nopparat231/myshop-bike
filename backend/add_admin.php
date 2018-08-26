@@ -15,7 +15,7 @@
    </div>
   	<div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN : <?php include('mm.php');?> </b>
+        
         <br>
         <?php include('menu.php');?>        	 
       </div>
@@ -49,6 +49,40 @@
           </div>
         </div>
         
+        <div class="form-group">
+        <div class="col-sm-2" align="right"> ที่อยู่ : </div>
+        <div class="col-sm-5" align="left">
+          <textarea name="admin_address" type="textarea" required class="form-control" id="admin_address" placeholder="ที่อยู่" ></textarea> 
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2" align="right"> เบอร์โทร : </div>
+        <div class="col-sm-5" align="left">
+          <input  name="admin_tel" type="text" required class="form-control" id="admin_tel" placeholder="0912345678" pattern="[0-9]{10}" minlength="2" title="เบอร์โทร 0-9" minlength="2"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2" align="right"> E-mail : </div>
+        <div class="col-sm-5" align="left">
+          <input  name="admin_email" type="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="form-control" id="admin_email" placeholder="E-mail" title="กรุณากรอก Email ให้ถูกต้อง" minlength="2"/>
+        </div>
+      </div>
+
+        <div class="form-group">
+          <div class="col-sm-2" align="right"> เลือกสถานะ : </div>
+          <div class="col-sm-7" align="left">
+
+            <select name="status">
+             <option value="staff">staff</option>
+             <option value="admin">admin</option>
+
+           </select>
+         </div>
+       </div>
+
+
   
         
       <div class="form-group">

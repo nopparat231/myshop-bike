@@ -54,7 +54,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
    </div>
   	<div class="row">
     	<div class="col-md-2">
-        <b>  ADMIN : <?php include('mm.php');?> </b>
+        
         <br>
         <?php include('menu.php');?>
       </div>
