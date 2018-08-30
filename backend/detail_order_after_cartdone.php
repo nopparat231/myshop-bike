@@ -109,6 +109,8 @@ if ($row_cartdone['postcode'] == 0 && $row_cartdone['order_status'] != 3  ) {?>
 
 <form action="add_postcode.php" method="get" >
 <input type="number" hidden name="order_id" value="<?php echo $row_cartdone['order_id'];?>" />
+<input type="text" hidden name="mem_name" value="<?php echo $row_cartdone['mem_name'];?>" />
+<input type="text" hidden name="mem_email" value="<?php echo $row_cartdone['mem_email'];?>" />
 <input type="text" name="postcode" />
 <input type="number" name="status" value="3" hidden />
 <button type="submit" name="submit" value="เพิ่มเลขพัสดุ" class="glyphicon glyphicon-floppy-saved btn-lm "  />
