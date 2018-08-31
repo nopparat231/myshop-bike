@@ -10,7 +10,7 @@ $admin_name = $_POST['admin_name'];
 $admin_tel = $_POST['admin_tel'];
 $admin_address = $_POST['admin_address'];
 $admin_email = $_POST['admin_email'];
-$status = $_POST['status'];
+$admin_status = $_POST['admin_status'];
 
 
 $check ="SELECT * FROM tbl_admin  WHERE admin_user='$admin_user'";
@@ -28,11 +28,11 @@ if($num > 0)
 
 
 $sql ="INSERT INTO tbl_admin
-		(admin_user,  admin_pass, admin_name ,status ,mem_tel ,mem_address ,mem_email)
+		(admin_user,  admin_pass, admin_name ,admin_status ,admin_tel ,admin_address ,admin_email)
 
 		VALUES
 
-		('$admin_user', '$admin_pass', '$admin_name' ,'$status' ,'$mem_tel' ,'$mem_address' ,'$mem_email')";
+		('$admin_user', '$admin_pass', '$admin_name' ,'$admin_status' ,'$admin_tel' ,'$admin_address' ,'$admin_email')";
 
 		$result = mysql_query($sql, $condb) or die("Error in query : $sql" .mysql_error());
 }

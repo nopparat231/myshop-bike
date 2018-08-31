@@ -60,14 +60,15 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
       </div>
         <div class="col-md-10">
         <h3 align="center"> รายการ Admin  <a href="add_admin.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+        <div class="table-responsive">
           <table id="example" class="display" cellspacing="0" border="1">
-		<thead>
+    <thead>
             <tr align="center">
-              <th width="5%">admin_id</th>
-              <th width="10%">admin_user</th>
-              <th width="10%">admin_pass</th>
-              <th width="10%">admin_name</th>
-              <th width="15%">date_save</th>
+              <th width="5%">id</th>
+              <th width="10%">ข้อมูล</th>
+              <th width="15%">ที่อยู่</th>
+              <th width="5%">สถานะ</th>
+              <th width="5%">วันที่สมัคร</th>
               <th width="5%">แก้ไข </th>
               <th width="5%">ลบ</th>
             </tr>
@@ -75,15 +76,21 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
             <?php do { ?>
               <tr>
                 <td align="center"><?php echo $row_listadmin['admin_id']; ?></td>
-                <td><?php echo $row_listadmin['admin_user']; ?></td>
-                <td><?php echo $row_listadmin['admin_pass']; ?></td>
-                <td><?php echo $row_listadmin['admin_name']; ?></td>
-                <td><?php echo $row_listadmin['date_save']; ?></td>
+                <td><?php echo "ชื่อ : ",$row_listadmin['admin_name']; ?><br />
+                <?php echo "User : ",$row_listadmin['admin_user']; ?><br />
+                <?php echo "Pass : ",$row_listadmin['admin_pass']; ?></td>
+                <td><?php echo "ที่อยู่ : " ,$row_listadmin['admin_address']; ?><br />
+                  <?php echo "เบอร์โทร : " ,$row_listadmin['admin_tel']; ?><br />
+                  <?php echo "E-mail : " ,$row_listadmin['admin_email']; ?>
+                </td>
+                <td align="center"><?php echo $row_listadmin['admin_status']; ?><br />
+                <td align="center"><?php echo $row_listadmin['date_save']; ?></td>
                 <td><center> <a href="edit_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
                 <td><center> <a href="del_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
               </tr>
               <?php } while ($row_listadmin = mysql_fetch_assoc($listadmin)); ?>
           </table>
+        </div>
         </div>
     </div>
  </div>

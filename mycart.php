@@ -53,7 +53,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 
 ?>
 
-<p align="center"><button class="btn btn-primary btn-sm" onclick="window.print()">พิมพ์</button></p>
+
 
 <table id="example" class="display" cellspacing="1" border="0" width="130%">
 	<thead>

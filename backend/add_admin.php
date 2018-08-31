@@ -74,11 +74,11 @@
           <div class="col-sm-2" align="right"> เลือกสถานะ : </div>
           <div class="col-sm-7" align="left">
 
-            <select name="status">
+            <select name="admin_status">
              <option value="staff">staff</option>
              <option value="admin">admin</option>
 
-           </select>
+          </select>
          </div>
        </div>
 

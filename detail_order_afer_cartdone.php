@@ -101,7 +101,7 @@ input[type='radio']:checked:before {
 </style>
 <form action="add_payslip_db.php" method="post" enctype="multipart/form-data" name="formpay" id="formpay">
 
-<p align="center"> <a class="btn btn-danger btn-sm" href="my_order.php?page=mycart"> ชำระเงินภายหลัง </a>  </p>
+<p align="center"> <a class="btn btn-danger btn-sm" href="my_order.php?page=mycart"> รายการสั่งซื้อทั้งหมด </a></p>
 <table width="700" border="1" align="center" class="table">
   <tr>
     <td colspan="6" align="center"><strong>รายการสั่งซื้อล่าสุด คุณ <?php echo $row_cartdone['mem_name'];?> <br />

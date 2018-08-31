@@ -9,12 +9,14 @@ $admin_name = $_POST['admin_name'];
 $admin_email = $_POST['admin_email'];
 $admin_tel = $_POST['admin_tel'];
 $admin_address = $_POST['admin_address'];
+$admin_status = $_POST['admin_status'];
 
 $sql ="UPDATE tbl_admin SET
 			admin_name='$admin_name',
 		  	admin_pass='$admin_pass',
 		  	admin_email='$admin_email',
 		  	admin_tel='$admin_tel',
+		  	admin_status='$admin_status',
 		  	admin_address='$admin_address'
 			WHERE admin_id=$admin_id
 			";
