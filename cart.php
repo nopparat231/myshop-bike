@@ -40,7 +40,7 @@ if($act == 'update')
 }
 ?>
 
-<form id="frmcart" name="frmcart" method="post" action="?act=update">
+<form id="frmcart" name="frmcart" method="post" action="?act=update" >
     <table width="100%" border="0" aligh="center" class="table table-hover">
     <tr>
     <td height="40" colspan="4" align="center" bgcolor="#33CCFF"><strong><b>ตระกล้าสินค้า</b></strong></td>

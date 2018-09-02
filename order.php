@@ -51,7 +51,7 @@ $totalRows_buyer = mysql_num_rows($buyer);
 	if($_SESSION['MM_Username']!=''){  
 ?>
 
-<p id="hp"><a href="index.php">เลือกสินค้าเพิ่ม</a> &nbsp;  <button class="btn btn-primary" onClick="window.print()"> print </button></p>
+<p id="hp"><button class="btn btn-info" ><a href="index.php">เลือกสินค้าเพิ่ม</a>  </button></p>
   <table width="700" border="0" align="center" class="table"  >
  
     <tr>

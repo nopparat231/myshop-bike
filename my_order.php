@@ -77,6 +77,7 @@ $totalRows_pf = mysql_num_rows($pf);
     <?php
     $page = $_GET['page'];
     if ($page == 'mycart') {
+      echo "<br>";
       include('mycart.php');
       
     }else {

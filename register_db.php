@@ -43,7 +43,7 @@ $result1 = mysql_query($sql,$condb) or die ("Error in query : $sql" .mysql_error
 		$strMessage .= "Welcome : ".$mem_name."<br>";
 		$strMessage .= "=================================<br>";
 		$strMessage .= "Activate account click here.<br>";
-		$strMessage .= "http://localhost/allpj/myshop-bike/activate.php?sid=".$session_id."&mem_id=".$mem_id."<br>";
+		$strMessage .= "http://localhost/myshop-bike/activate.php?sid=".$session_id."&mem_id=".$mem_id."<br>";
 		$strMessage .= "=================================<br>";
 		$strMessage .= "<br>";
 

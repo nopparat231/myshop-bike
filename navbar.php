@@ -44,7 +44,6 @@ $totalRows_mlogin = mysql_num_rows($mlogin);
 
 
 
-
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -55,7 +54,7 @@ $totalRows_mlogin = mysql_num_rows($mlogin);
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">หน้าหลัก</a>
+      <a class="navbar-brand" href="index.php"><span class="  glyphicon glyphicon-home"> หน้าหลัก</span></a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -71,7 +70,7 @@ $totalRows_mlogin = mysql_num_rows($mlogin);
         <button type="submit" class="btn btn-info">ค้นหา</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="register.php">สมัครสมาชิก</a></li>
+      
     
       
       <?php
@@ -81,18 +80,19 @@ $totalRows_mlogin = mysql_num_rows($mlogin);
 		  
 		  
 		 
-		  
+echo "<li><a href='my_order.php?page=mycart'><span class='glyphicon glyphicon-th-list'> รายการสั่งซื้อ</span></a></li>";		  
   
 echo "<li>";
 echo"<a href='profile.php'>";
 echo"<span class='glyphicon glyphicon-user
-'>คุณ".$row_mlogin['mem_name'];
+'>คุณ ".$row_mlogin['mem_name'];
 echo"</span></a>";
 echo"</li>";
 
 echo"<li><a href='logout.php'><span class='glyphicon glyphicon-log-out'> ออกจากระบบ</span></a></li>";
 
     }else{
+      echo "<li><a href='register.php'>สมัครสมาชิก</a></li>";
       echo"<li><a href='login.php'>เข้าสู่ระบบ <span class='glyphicon glyphicon-log-in'></span></a></li>";
 
     }
@@ -107,6 +107,3 @@ echo"<li><a href='logout.php'><span class='glyphicon glyphicon-log-out'> ออ�
 <?php
 mysql_free_result($mlogin);
 ?>
-<br>
-<br>
-<br>

@@ -51,7 +51,9 @@ $totalRows_prd = mysql_num_rows($prd);
     
     <br><br>
   </p>
+
 </div>
+
 <?php } while ($row_prd = mysql_fetch_assoc($prd)); ?>
 <?php }
 mysql_free_result($prd);

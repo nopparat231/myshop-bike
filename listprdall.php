@@ -1,4 +1,4 @@
-<?php //require_once('Connections/condb.php'); ?>
+
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -38,11 +38,13 @@ $row_prd = mysql_fetch_assoc($prd);
 $totalRows_prd = mysql_num_rows($prd);
 ?>
 <?php do { ?>
+ 
   <div class="col-sm-4" align="center">
+    
     <img src="pimg/<?php echo $row_prd['p_img1'];?>" width="80%" ></img>
     <p align="center">
-      <b><?php echo $row_prd['p_name']; ?> <font color="red" >  
-	  <?php echo number_format($row_prd['p_price']); ?>  บาท </font> </b>
+      <h2><?php echo $row_prd['p_name']; ?> 
+	  <?php echo number_format($row_prd['p_price']); ?>  บาท </h2>
       <br />
 	  
   
@@ -52,7 +54,9 @@ $totalRows_prd = mysql_num_rows($prd);
         
       <br><br>
       </p>
-    </div>
+</div>
+
+
   <?php } while ($row_prd = mysql_fetch_assoc($prd)); ?>
 <?php
 mysql_free_result($prd);
