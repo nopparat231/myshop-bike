@@ -121,7 +121,7 @@ input[type='radio']:checked:before {
           <tr>
             <td width="41%" align="left" valign="top"><strong><font color="red"><br />
 ชำระเงิน ธ.<?php echo $row_cartdone['b_name'];?> <br />
-เลข บ/ช <?php echo $row_cartdone['b_number'];?> <br />
+เลข บ/ช <?php echo $row_rb['b_number'];?> <br />
 จำนวน <?php echo $row_cartdone['pay_amount'];?><br />
 วันที่ชำระ <?php echo date('d/m/Y',strtotime($row_cartdone['pay_date']));?></font><br />
 <h4 style="color:blue">
@@ -220,7 +220,7 @@ input[type='radio']:checked:before {
     <tr>
       <td align="center">จำนวนเงิน</td>
       <td colspan="5" align="left"><label for="pay_amount"></label>
-      <input type="number" name="pay_amount" id="pay_amount"  placeholder="0.00" required="required"/></td>
+      <input type="text" name="pay_amount" id="pay_amount"  value="<?php echo number_format($total,2);?>" required="required"/></td>
     </tr>
     <tr>
       <td align="center">&nbsp;</td>
