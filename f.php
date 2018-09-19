@@ -8,7 +8,7 @@
 }
 </style>
 
-<footer class="container-fluid bg-4 text-center">
+<footer class="container-fluid bg-4 text-center " id="hp">
   <br />
   <p>@My Web </p> 
   <a class="btn btn-primary" href="register.php" ">สมัครสมาชิก </a>||<a href="login.php" class="btn btn-primary">  เข้าสู่ระบบ</a><br /><a class="btn btn-outline-info" href="login_admin.php" ">admin login </a>

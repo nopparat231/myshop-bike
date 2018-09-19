@@ -53,9 +53,9 @@ if($_SESSION['MM_Username']!=''){
 
   <p id="hp"><button class="btn btn-info" ><a href="index.php">เลือกสินค้าเพิ่ม</a>  </button></p>
   <table width="700" border="0" align="center" class="table"  >
-   
+
     <tr>
-      <td width="1558" colspan="5" align="center">
+      <td width="1558" colspan="7" align="center">
         <strong>สั่งซื้อสินค้า</strong></td>
       </tr>
       <tr class="success">
@@ -64,6 +64,7 @@ if($_SESSION['MM_Username']!=''){
         <td align="center">ไซร์</td>
         <td align="center">ราคา</td>
         <td align="center">จำนวน</td>
+        <td align="center">ค่าจัดส่ง</td>
         <td align="center">รวม/รายการ</td>
       </tr>
       <form  name="formlogin" action="saveorder.php" method="POST" id="login" class="form-horizontal">
@@ -81,7 +82,13 @@ if($_SESSION['MM_Username']!=''){
             $row	= mysql_fetch_array($query);
             $sum	= $row['p_price']*$p_qty;
 
-            $total	+= $sum +$ems ;
+            $total	+= $sum;
+
+
+            $ems = $row['p_ems'] * $p_qty;
+            $total += $ems;
+
+            $sumems +=$ems;
             
             echo "<tr class='success' align='center'> ";
             echo "<td align='center'>";
@@ -91,6 +98,7 @@ if($_SESSION['MM_Username']!=''){
             echo "<td align='center'>" . $row["p_size"] . "</td>";
             echo "<td align='center'>" .number_format($row['p_price']) ."</td>";
             echo "<td align='center'>$p_qty</td>";
+            echo "<td width='10%' align='center'>".number_format($ems). "</td>";
             echo "<td align='center'>".number_format($sum)."</td>";
             echo "</tr>";
             
@@ -102,24 +110,27 @@ if($_SESSION['MM_Username']!=''){
 
             <?php 
           }
+          
           $tax = $total*0.07;
           $total += $tax;
 
-          echo "<tr>";
-          echo "<td  align='left' colspan='5'><b>จัดส่ง</b></td>";
-          echo "<td align='center'>"."<b>".number_format($ems)."</b>"."</td>";
+
+          echo "<tr class='success'>";
+          echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";
+          echo "<td align='center'>"."<b>".number_format($sumems)."</b>"."</td>";
           echo "</tr>";
 
-          echo "<tr>";
-          echo "<td  align='left' colspan='5'><b>ภาษี 7%</b></td>";
+          echo "<tr class='success'>";
+          echo "<td  align='left' colspan='6'><b>ภาษี 7%</b></td>";
           echo "<td align='center'>"."<b>".number_format($tax)."</b>"."</td>";
           echo "</tr>";
 
+          echo "<tr class='success'>";
+          echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
+          echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total)."</b>"."</td>";
 
-          echo "<tr>";
-          echo "<td  align='center' colspan='5'><b>รวม</b></td>";
-          echo "<td align='center'>"."<b>".number_format($total)."</b>"."</td>";
           echo "</tr>";
+
           ?>
         </table>
       </div>

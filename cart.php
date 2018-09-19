@@ -49,6 +49,7 @@ if($act == 'update')
     <td><center>รหัส</center></td>
     <td><center>ราคา</center></td>
     <td><center>จำนวน</center></td>
+    
     <td><center>รวม</center></td>
     </tr>
 <?php
@@ -70,7 +71,7 @@ if(!empty($_SESSION['shopping_cart']))
         echo "<td width='5%' align='center'>" .number_format($row["p_price"]) . "</td>";
         echo "<td width='5%' align='center'>";  
         echo "<input type='number' name='amount[$p_id]' value='$p_qty' size='2'/></td>";
-        echo "<td width='20%' align='left'>".number_format($sum). "&nbsp<a href='index_order.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' ></span></a></td>";
+        echo "<td width='20%' align='left'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' ></span></a></td>";
       
         echo "</tr>";
     }

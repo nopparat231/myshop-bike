@@ -20,6 +20,7 @@ require_once('Connections/condb.php');
 	$p_name = $_POST['p_name'];
 	$postcode = '';
 
+mysql_select_db($database_condb);
 	 mysql_query("BEGIN" ,$condb );
 	$sql1 = "INSERT INTO tbl_order VALUES (NULL,'$mem_id','$name','$address','$email','$phone','$status','$pay_slip','$b_name','$b_number','$pay_date','$pay_amount','$postcode','$order_date')";
 

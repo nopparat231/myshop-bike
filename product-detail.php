@@ -9,17 +9,21 @@
   <body>
   <div class="container">
   <div class="row">
+    <div class="col-md-12">
+        <div class="col-md-12">
          <?php include('banner.php');?>
-   </div>
-  	<div class="row">
-    	<div class="col-md-12">
+ <br>
+</div>
+  	
+    
         	<?php include('navbar.php');?>
-        </div>
-    </div>
- </div> 
+      
+  
+ 
  <!--start show  product-->
- <div class="container">
- 	<div class="row">
+ 
+ 	
+    <br>
     	<!-- categories-->
     	<div class="col-md-3">
         	<?php include('category.php');?>
@@ -28,9 +32,9 @@
         <div class="col-md-9">
          	<?php  include('prd-detail.php');?>
         </div>
-        
-    </div>
-</div>
+        </div>
+   </div>
+</div> 
  <!--end show  product-->
  
  

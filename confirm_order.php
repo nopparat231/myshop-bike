@@ -21,7 +21,9 @@
 
   <div class="container">
     <div class="row">
+      <div class="col-md-12">
       <?php include('banner.php');?>
+    </div>
     </div>
     <div class="row">
       <div class="col-md-12" id="hp">
