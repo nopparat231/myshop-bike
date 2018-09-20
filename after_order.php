@@ -36,14 +36,14 @@ if($act == 'update')
     foreach($amount_array as $p_id => $amount)
     {
         $_SESSION['shopping_cart'][$p_id] = $amount;
-       
+
     }
 }
-
+$q = $p_qty;
 ?>
 
-    
-</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 
 <form id="frmcart" name="frmcart" method="post" action="?act=update&oct=after" >
@@ -60,6 +60,7 @@ if($act == 'update')
             <td align="left">รวม</td>
             <td><center></center></td>
         </tr>
+
         <?php
         $total=0;
 
@@ -86,9 +87,11 @@ if($act == 'update')
                 echo "<td align='center' width='5%'>" .$row["p_size"]. "</td>";
                 echo "<td width='15%' align='center'>" .number_format($row["p_price"]) . "</td>";
 
+
                 echo "<td width='15%' align='center'>"; 
 
                 echo "<input type='number' value='$p_qty' size='1' name='amount[$p_id]' /></td>";
+
 
                 echo "<td width='10%' align='center'>".number_format($ems). "</td>";
                 //echo "<input type='number' name='amount[$p_id]' value='$p_qty' size='2'/></td>";
@@ -96,6 +99,8 @@ if($act == 'update')
                 echo "<td width='2%'align='left'><a href='confirm_order.php?p_id=$p_id&act=remove&oct=after' ><span class='glyphicon glyphicon-remove' ></span></a></td>";
 
                 echo "</tr>";
+
+
             }
 
 
@@ -120,19 +125,37 @@ if($act == 'update')
             echo "</tr>";
 
         }
-        ?>
 
 
-        <tr >
+        if ($p_qty > $row["p_qty"]) {
+// echo $p_qty;
+// echo $row["p_qty"];
+           ?>
+           <script>alert('รายการสินค้า "<?php echo $row["p_name"] ?>" มีสินค้าเพียง "<?php echo $row["p_qty"] ?>" ชิ้น!'); </script>
+           <tr >
 
             <td colspan="6" >
                 <input type="button" name="Submit2" value="< กลับหน้าหลัก" class="btn btn-info pull-left" onclick="window.location='index.php';" />
 
-                <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success pull-right" onclick="window.location='confirm_order.php?p_id=$p_id&oct=order';" />
+                <input type="button" name="Submit2" value="สั่งซื้อ" disabled class="btn btn-success pull-right" onclick="window.location='confirm_order.php?p_id=$p_id&oct=order';" />
 
                 <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning pull-right"  />
 
-            </td>
-        </tr>
-    </table>
+            <?php   }else{?>
+
+              <tr >
+
+                <td colspan="6" >
+                    <input type="button" name="Submit2" value="< กลับหน้าหลัก" class="btn btn-info pull-left" onclick="window.location='index.php';" />
+
+                    <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success pull-right" onclick="window.location='confirm_order.php?p_id=$p_id&oct=order';" />
+
+                    <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning pull-right"  />
+
+
+                <?php } ?>
+               
+           </td>
+       </tr>
+   </table>
 </form>

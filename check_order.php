@@ -1,28 +1,27 @@
 
-
+<?php require_once('Connections/condb.php'); ?>
 <?php 
 
 
 
 
-$p_id = $_POST['p_id']
+$p_qty = $_GET['p_qty'];
+$p_id = $_GET['p_id'];
 
-$sql = "select * from tbl_product where p_id=$p_id";
-        $query = mysql_query($sql, $condb );
-        $row = mysql_fetch_array($query);
+mysql_select_db($database_condb);
+$sql3 = "select * from tbl_product where p_id=$p_id";
+$query = mysql_query($sql3, $condb );
+
+if ($p_qty > $query['p_qty'] ) { ?>
+	<script>
+		swal("Good job!", "You clicked the button!", "error");
+
+                  // alert('รายการสินค้า ". $row["p_name"] ." มีสินค้า ".$row["p_qty"]." ชิ้น!');
+
+              </script>
+          <?php  }   ?>
+
+
         
-
-
-if ($_SESSION['shopping_cart'] as $p_id=>$p_qty > $row['p_qty']){
-  echo"<script>";
-  echo"alert('User นี้มีผู้ใช้แล้ว กรุณาลองใหม่อีกครั้ง');";
-  echo"window.location = 'index.php';";
-  echo"</script>";  
-}else{
-
-	
-}
-
- ?>
 
 

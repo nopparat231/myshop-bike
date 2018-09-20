@@ -37,7 +37,7 @@ print_r($_POST['bank']);
 
 }
 
-
+mysql_select_db($database_condb);
 $sql = "UPDATE tbl_order SET order_status = '$order_status', pay_amount = '$pay_amount', pay_date = '$pay_date' , b_name = '$b_name',
 b_number = '$b_number', pay_slip = '$newname' WHERE order_id = '$order_id'";
 

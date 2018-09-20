@@ -74,7 +74,7 @@ if($_SESSION['MM_Username']!=''){
 
         if ($totalRows_buyer > 0) {
 
-          $ems = 10;
+      
           foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
           {
             $sql = "select * from tbl_product where p_id=$p_id";
