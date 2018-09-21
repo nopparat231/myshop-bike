@@ -11,7 +11,7 @@ session_start();
   $numrand = (mt_rand()); //สุมชื่อไฟล์อัสุมชื่อไฟล์อัพโหลด
 
 $resultb = $_POST['bank'];
-$result_explode = explode('-', $resultb);
+$result_explode = explode('_', $resultb);
 $b_name= $result_explode[0];
 $b_number = $result_explode[1];
 $pay_date = $_POST['pay_date'];

@@ -3,39 +3,39 @@
 
 
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+	function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+	{
+		if (PHP_VERSION < 6) {
+			$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+		}
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+		$theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
 
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
+		switch ($theType) {
+			case "text":
+			$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+			break;
+			case "long":
+			case "int":
+			$theValue = ($theValue != "") ? intval($theValue) : "NULL";
+			break;
+			case "double":
+			$theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+			break;
+			case "date":
+			$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+			break;
+			case "defined":
+			$theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+			break;
+		}
+		return $theValue;
+	}
 }
 
 $colname_mm = "-1";
 if (isset($_SESSION['MM_Username'])) {
-  $colname_mm = $_SESSION['MM_Username'];
+	$colname_mm = $_SESSION['MM_Username'];
 }
 // echo $colname_mm;
 mysql_select_db($database_condb);
@@ -58,49 +58,54 @@ $totalRows_mycart = mysql_num_rows($mycart);
 <table id="example" class="display" cellspacing="0" border="1">
 	<thead>
 		<tr>
-		<th>รหัสสั่งซื้อ</th>
-		<th>ลูกค้า</th>
-		<th>จำนวนรายการ</th>
-		<th>ราคารวม</th>
-		<th>สถานะ</th>
-		<th>วันที่ทำรายการ</th>
-	</tr>
-	</thead>
-<?php if ($totalRows_mycart > 0) { ?>
-<?php do { ?>
-	<tr>
-		<td>
-			<?php echo $row_mycart['oid'];?>
-			<span id="hp">
-				<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&act=show-order">
-					<span class="glyphicon glyphicon-zoom-in"></span>
-				</a>
-			</span>
-			</td>
-		<td align="center">
-			<?php echo $row_mycart['name'];?>
-		</td>
-
-		<td align="center">
-			<?php echo $row_mycart['coid'];?>
-		</td>
-		<td align="center">
-			<?php echo number_format($row_mycart['ctotal'],2);?>
-		</td>
-		<td align="center">
-			<font color="red">
-			<?php $status = $row_mycart['order_status'];
-			include('status.php');
-			?>
-			</font>
-		</td>
-		<td> <?php echo $row_mycart['order_date'];?></td>
+			<th>รหัสสั่งซื้อ</th>
+			<th>ลูกค้า</th>
+			<th>จำนวนรายการ</th>
+			<th>ราคารวม</th>
+			<th>สถานะ</th>
+			<th>วันที่ทำรายการ</th>
+			<th> <center> ลบ </center></th>
 		</tr>
-	<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
+	</thead>
+	<?php if ($totalRows_mycart > 0) { ?>
+		<?php do { ?>
+			<tr>
+				<td>
+					<?php echo $row_mycart['oid'];?>
+					<span id="hp">
+						<a href="index.php?order_id=<?php echo $row_mycart['oid'];?>&act=show-order">
+							<span class="glyphicon glyphicon-zoom-in"></span>
+						</a>
+					</span>
+				</td>
+				<td align="center">
+					<?php echo $row_mycart['name'];?>
+				</td>
+
+				<td align="center">
+					<?php echo $row_mycart['coid'];?>
+				</td>
+				<td align="center">
+					<?php echo number_format($row_mycart['ctotal'],2);?>
+				</td>
+				<td align="center">
+					<font color="red">
+						<?php $status = $row_mycart['order_status'];
+						include('status.php');
+						?>
+					</font>
+				</td>
+				<td> <?php echo $row_mycart['order_date'];?></td>
+				<td><center>
+					<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');">
+					ลบ </a></center>
+				</td>
+			</tr>
+		<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?>
 	</table>
 
 	<?php
 }
-	mysql_free_result($mycart);
-	mysql_free_result($mm);
-	?>
+mysql_free_result($mycart);
+mysql_free_result($mm);
+?>

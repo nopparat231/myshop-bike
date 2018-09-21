@@ -84,7 +84,7 @@ include('h.php');?>
         ?>
         
         <div class="panel panel-success">
-          <div class="panel-heading"> สินค้าแนะนำ  </div>
+          <div class="panel-heading"> สินค้าขายดี  </div>
 
         </div>
 

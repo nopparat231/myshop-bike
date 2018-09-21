@@ -42,10 +42,6 @@ if($act == 'update')
 $q = $p_qty;
 ?>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-
 <form id="frmcart" name="frmcart" method="post" action="?act=update&oct=after" >
     <table width="100%" border="0" aligh="center" class="table table-hover">
         <tr>

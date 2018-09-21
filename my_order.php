@@ -56,24 +56,26 @@ $totalRows_pf = mysql_num_rows($pf);
   <body>
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
     <span id="hp">
         <?php include('banner.php'); ?>
     </span>
+   </div>
   
-  
-    <div class="col-md-12" id="hp">
+    <div id="hp">
       <?php include('navbar.php'); ?>
     </div>
   
 
 <!-- start show prd -->
     <!-- menu -->
+     
     <div class="col-md-3" id="hp">
       <?php include('m_menu.php'); ?>
     </div>
     <!-- content -->
     
-    <div class="col-md-8">
+    <div class="col-md-9">
     <?php
     $page = $_GET['page'];
     if ($page == 'mycart') {
@@ -85,9 +87,11 @@ $totalRows_pf = mysql_num_rows($pf);
     }
 
      ?>
+   
      </div>
    
 </div>
+
 
 </div>
  <!-- end show prd -->

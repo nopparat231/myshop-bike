@@ -126,7 +126,7 @@ input[type='radio']:checked:before {
 
                 echo $row_cartdone['b_number'];?> <br />
 
-                จำนวน <?php echo $row_cartdone['pay_amount'];?><br />
+                จำนวน <?php echo $row_cartdone['pay_amount'];?> บาท<br />
                 วันที่ชำระ <?php echo date('d/m/Y',strtotime($row_cartdone['pay_date']));?></font><br />
                 <h4 style="color:blue">
                   เลขพัสดุ :  <?php echo $row_cartdone['postcode'];?>
@@ -180,7 +180,7 @@ input[type='radio']:checked:before {
         <td align="center"><?php echo number_format($row_cartdone['p_price']);?></td>
         <td align="center"><?php echo $row_cartdone['p_c_qty'];?></td>
         <td align='center'><?php echo $ems ?></td>
-        <td align="center"><?php echo number_format($row_cartdone['total']);?></td>
+        <td align="center"><?php echo number_format($total);?></td>
       </tr> 
 
     <?php } while ($row_cartdone = mysql_fetch_assoc($cartdone)); 
@@ -226,7 +226,8 @@ input[type='radio']:checked:before {
           <tr>
             <td width="10%" align="center">&nbsp;</td>
             <td width="5%" align="center">
-              <input <?php if (!(strcmp($row_rb['b_name'],"b_bank"))) {echo "checked=\"checked\"";} ?> type="radio" name="bank"  value="<?php echo $row_rb['b_name'].'-'.$row_rb['b_number'];?>" required="required" />
+              <input <?php if (!(strcmp($row_rb['b_name'],"b_bank"))) {echo "checked=\"checked\"";} ?> type="radio" name="bank"  value="<?php echo $row_rb['b_name'].'_'.$row_rb['b_number'];?>" required="required" />
+
             </td>
             <td width="5%" align="center"><img src="bimg/<?php echo $row_rb['b_logo']; ?>" width="50" /></td>
             <td width="15%"><?php echo $row_rb['b_name']; ?></td>

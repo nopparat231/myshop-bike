@@ -73,6 +73,7 @@ $totalRows_prd = mysql_num_rows($prd);
             <th width="7%">ราคา</th>
             <th width="7%">จำนวน</th>
             <th width="5%">ไซส์</th>
+            <th width="5%">ค่าจัดส่ง</th>
             <th width="10%">ภาพสินค้า</th>
             <th>แก้ไข</th>
             <th>ลบ</th>
@@ -90,7 +91,7 @@ $totalRows_prd = mysql_num_rows($prd);
               <br>
               <?php // echo $row_prd['p_detial']; ?>
                </td>
-              <td align="right" valign="top"><?php echo $row_prd['p_price']; ?></td>
+              <td align="right" valign="top"><?php echo number_format($row_prd['p_price']); ?></td>
               <td align="center" valign="top">
 			  <?php echo $row_prd['p_qty']; ?>
               
@@ -98,6 +99,9 @@ $totalRows_prd = mysql_num_rows($prd);
               </td>
               <td align="center" valign="top">
                 <?php echo $row_prd['p_size'];?>
+              </td>
+               <td align="center" valign="top">
+                <?php echo $row_prd['p_ems'];?>
               </td>
               <td><img src="../pimg/<?php echo $row_prd['p_img1'];?>" width="100px"></td>
               <td><center>

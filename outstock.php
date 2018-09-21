@@ -2,7 +2,7 @@
 
 <?php 
 $qty = $row_prd['p_qty'];
-if($qty < 0){
+if($qty <= 0){
 
     echo "<font color='red'>";
     echo "<button class='btn btn-danger btn-xs' disabled='disable'>หมด!</button>";
