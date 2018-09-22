@@ -48,9 +48,7 @@ if($act == 'update')
     <tr >
     <td><center>สินค้า</center></td>
     <td><center>ราคา</center></td>
-<!--     <td><center>จำนวน</center></td>
- -->    
- <td><center></center></td>
+    <td><center>จำนวน</center></td>
     <td><center>รวม</center></td>
     </tr>
 <?php
@@ -70,8 +68,8 @@ if(!empty($_SESSION['shopping_cart']))
         echo "<tr>";
         echo "<td width='15%'><img src='pimg/" . $row["p_img1"] . "' width='100%''></img></td>";
         echo "<td width='5%' align='center'>" .number_format($row["p_price"]) . "</td>";
-        echo "<td width='5%' align='center'>";  
-       echo "<input type='number' name='amount[$p_id]' hidden value='$p_qty' size='2'/></td>";
+       
+       echo "<td width='5%' align='center'>x".$p_qty."</td>";  
         echo "<td width='20%' align='right'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' ></span></a></td>";
       
         echo "</tr>";
