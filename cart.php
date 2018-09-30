@@ -68,9 +68,10 @@ if(!empty($_SESSION['shopping_cart']))
         echo "<tr>";
         echo "<td width='15%'><img src='pimg/" . $row["p_img1"] . "' width='100%''></img></td>";
         echo "<td width='5%' align='center'>" .number_format($row["p_price"]) . "</td>";
-       
-       echo "<td width='5%' align='center'>x".$p_qty."</td>";  
-        echo "<td width='20%' align='right'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' ></span></a></td>";
+          echo "<td width='15%' align='center'>"; 
+
+                echo "<input type='number' value='$p_qty' size='1' name='amount[$p_id]' /></td>";
+        echo "<td width='20%' align='right'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' style='color: red' ></span></a></td>";
       
         echo "</tr>";
     }

@@ -5,7 +5,7 @@
 <div class="list-group">
 	<a href="index.php" class="list-group-item active"  style="background-color: #3c3c3c">หน้าหลัก</a>
 	<?php 
-	if ($row_mm['admin_status'] == 'admin') { ?>
+	if ($row_mm['status'] == 'admin') { ?>
 		<a href="list_admin.php" class="list-group-item">-จัดการผู้ดูแลระบบ</a>
 		<a href="list_member.php" class="list-group-item">-จัดการสมาชิค</a>
 		<a href="list_product_type.php" class="list-group-item">-จัดการประเภทสินค้า</a>

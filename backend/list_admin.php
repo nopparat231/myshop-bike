@@ -83,7 +83,7 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
                   <?php echo "เบอร์โทร : " ,$row_listadmin['admin_tel']; ?><br />
                   <?php echo "E-mail : " ,$row_listadmin['admin_email']; ?>
                 </td>
-                <td align="center"><?php echo $row_listadmin['admin_status']; ?><br />
+                <td align="center"><?php echo $row_listadmin['status']; ?><br />
                 <td align="center"><?php echo $row_listadmin['date_save']; ?></td>
                 <td><center> <a href="edit_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
                 <td><center> <a href="del_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>

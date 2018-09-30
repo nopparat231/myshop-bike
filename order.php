@@ -169,8 +169,14 @@ if($_SESSION['MM_Username']!=''){
           <div class="col-sm-12" align="center">
             <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
 
-            <button type="submit" class="btn btn-primary" id="btn">
+            
+<a href="confirm_order.php?p_id=$p_id&oct=after" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
+            
+            <button type="submit" class="btn btn-success" id="btn">
             ยืนยันสั่งซื้อ </button>
+
+<a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
+            
           </div>
         </div>
       </form>

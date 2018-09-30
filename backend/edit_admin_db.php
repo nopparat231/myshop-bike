@@ -16,7 +16,7 @@ $sql ="UPDATE tbl_admin SET
 		  	admin_pass='$admin_pass',
 		  	admin_email='$admin_email',
 		  	admin_tel='$admin_tel',
-		  	admin_status='$admin_status',
+		  	status='$admin_status',
 		  	admin_address='$admin_address'
 			WHERE admin_id=$admin_id
 			";
