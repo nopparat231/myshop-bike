@@ -12,8 +12,8 @@ if ($status == 1) {
 	echo "ส่งของแล้ว";
 	echo "</font>";
 }elseif ($status == 4) {
-	echo "<font color='black'>";
-	echo "ยกเลิกคำสั่งซื้อ";
+	echo "<font color='#E7AE0A'>";
+	echo "รอตรวจสอบ";
 	echo "</font>";
 }
 ?>
