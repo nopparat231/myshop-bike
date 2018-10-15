@@ -61,7 +61,7 @@ mysql_select_db($database_condb);
     
 	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
     //declare two session variables and assign them
-    $_SESSION['MM_Username'] = $loginUsername;
+    $_SESSION['MM_admin'] = $loginUsername;
     $_SESSION['MM_UserGroup'] = $loginStrGroup;	      
 
     if (isset($_SESSION['PrevUrl']) && false) {

@@ -32,8 +32,8 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 $colname_mm = "-1";
-if (isset($_SESSION['MM_Username'])) {
-  $colname_mm = $_SESSION['MM_Username'];
+if (isset($_SESSION['MM_admin'])) {
+  $colname_mm = $_SESSION['MM_admin'];
 }
 mysql_select_db($database_condb);
 $query_mm = sprintf("SELECT * FROM tbl_admin WHERE admin_user = %s", GetSQLValueString($colname_mm, "text"));

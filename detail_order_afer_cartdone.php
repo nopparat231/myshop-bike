@@ -101,7 +101,13 @@ input[type='radio']:checked:before {
 </style>
 <form action="add_payslip_db.php" method="post" enctype="multipart/form-data" name="formpay" id="formpay">
 
-  <p align="center"> <a class="btn btn-danger btn-sm" href="my_order.php?page=mycart" id="hp"> รายการสั่งซื้อทั้งหมด </a></p><a class="btn btn-primary btn-sm pull-left" id="hp" onclick="window.print()"> พิมพ์ </a>
+  <p align="center"> <a class="btn btn-danger btn-sm" href="my_order.php?page=mycart" id="hp"> รายการสั่งซื้อทั้งหมด </a></p>
+
+
+
+  <a href="print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a> 
+
+  
   <table width="700" border="0" align="center" class="table">
     <tr>
       <td colspan="7" align="center"><strong>รายการสั่งซื้อล่าสุด คุณ <?php echo $row_cartdone['mem_name'];?> <br />

@@ -71,12 +71,15 @@ $totalRows_cartdone = mysql_num_rows($cartdone);
 
 
 <table width="700" border="0" align="center" class="table">
-  <tr>
-    <td colspan="5" align="center"><p align="center"> <a class="btn btn-primary btn-sm" id="hp" onclick="window.print()"> พิมพ์ </a>  </p>
+ 
+    
+<a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a> 
 
-    </td>
-  </tr>
-      <td width="1558" colspan="5" align="center">
+ <a href="update_check_order.php?order_id=<?php echo $colname_cartdone;?>&order_status=2" class="btn btn-warning btn-sm pull-right" onClick="return confirm('ยืนยันการตรวจสอบ');" id="hp" >  <span class="icon icon-print"></span> ตรวจสอบแล้ว </a> 
+
+
+
+      <td width="1558" colspan="6" align="center">
 
 
 <strong>รายการสั่งซื้อ คุณ<?php echo $row_cartdone['mem_name'];?> <br />

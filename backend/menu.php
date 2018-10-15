@@ -11,13 +11,14 @@
 		<a href="list_product_type.php" class="list-group-item">-จัดการประเภทสินค้า</a>
 		<a href="list_product.php" class="list-group-item">-จัดการสินค้า</a>
 		<a href="list_bank.php" class="list-group-item">-จัดการข้อมูลธนาคาร</a>
-		<a href="../logout.php" class="list-group-item list-group-item-danger">-ออกจากระบบ</a>
+		<a href="logout_admin.php" class="list-group-item list-group-item-danger">-ออกจากระบบ</a>
 
-	<?php } else { ?>
+	<?php } elseif ($row_mm['status'] == 'staff') 
+	 { ?>
 	<a href="list_product_type.php" class="list-group-item">-จัดการประเภทสินค้า</a>
 		<a href="list_product.php" class="list-group-item">-จัดการสินค้า</a>
 		<a href="list_bank.php" class="list-group-item">-จัดการข้อมูลธนาคาร</a>
-		<a href="../logout.php" class="list-group-item list-group-item-danger">-ออกจากระบบ</a>
+		<a href="logout_admin.php" class="list-group-item list-group-item-danger">-ออกจากระบบ</a>
 <?php } ?>
 
 </div>

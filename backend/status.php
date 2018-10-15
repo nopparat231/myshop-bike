@@ -15,5 +15,9 @@ if ($status == 1) {
 	echo "<font color='#E7AE0A'>";
 	echo "รอตรวจสอบ";
 	echo "</font>";
+}elseif ($status == 5) {
+	echo "<font color='#F54823'>";
+	echo "ยกเลิกคำสั่งซื้อ";
+	echo "</font>";
 }
 ?>

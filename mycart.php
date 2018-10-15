@@ -93,8 +93,8 @@ $totalRows_mycart = mysql_num_rows($mycart);
 				</td>
 				<td> <?php echo $row_mycart['order_date'];?></td>
 				<td><center>
-					<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการลบ');">
-					ลบ </a></center>
+					<a href="del_order.php?order_id=<?php echo $row_mycart['oid'];?>&order_status=4" class="btn btn-danger btn-xs" onClick="return confirm('ยืนยันการยกเลิกคำสั่งซื้อ');">
+					ยกเลิก </a></center>
 				</td>
 			</tr>
 
