@@ -54,8 +54,12 @@ include('access.php');?>
       }elseif ($act == 'show-cancel'){
         include('show_cancel_cart.php');
       }else{
-        include 'report.php';
+        
         include 'tbl_order.php';
+        include 'mm.php';
+        if ($row_mm['status'] == 'admin') {
+          include 'report.php';
+        }
       }
 
 

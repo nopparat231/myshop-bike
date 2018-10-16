@@ -4,7 +4,11 @@
 include('../Connections/condb.php');
 
 
-include '../admin/css.php'; ?>
+include '../admin/css.php';
+include 'report_db.php';
+
+
+ ?>
 
 
 
@@ -16,15 +20,15 @@ include '../admin/css.php'; ?>
     <!-- small box -->
     <div class="small-box bg-aqua">
       <div class="inner">
-        <h3>150</h3>
+        <h3><?php echo $row_order['Sumorder']; ?><sup style="font-size: 20px"> (รายการ)</sup></h3>
 
-        <p>New Orders</p>
+        <p>คำสั่งซื้อทั้งหมด</p>
       </div>
       <div class="icon">
         <i class="fa fa-shopping-cart"></i>
       </div>
-      <a href="#" class="small-box-footer">
-        More info <i class="fa fa-arrow-circle-right"></i>
+      <a href="?act=show-new" class="small-box-footer">
+        ดูเพิ่มเติม <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
   </div>
@@ -33,15 +37,15 @@ include '../admin/css.php'; ?>
     <!-- small box -->
     <div class="small-box bg-green">
       <div class="inner">
-        <h3>53<sup style="font-size: 20px">%</sup></h3>
+        <h3><?php echo $row_view['Sumprd']; ?><sup style="font-size: 20px"> (ชื้น)</sup></h3>
 
-        <p>Bounce Rate</p>
+        <p>สินค้าทั้งหมด</p>
       </div>
       <div class="icon">
         <i class="ion ion-stats-bars"></i>
       </div>
-      <a href="#" class="small-box-footer">
-        More info <i class="fa fa-arrow-circle-right"></i>
+      <a href="list_product.php" class="small-box-footer">
+        ดูเพิ่มเติม <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
   </div>
@@ -50,15 +54,15 @@ include '../admin/css.php'; ?>
     <!-- small box -->
     <div class="small-box bg-yellow">
       <div class="inner">
-        <h3>44</h3>
+        <h3><?php echo $row_mem['SumMem']; ?> <sup style="font-size: 20px">(คน)</sup></h3>
 
-        <p>User Registrations</p>
+        <p>จำนวน สมาชิก</p>
       </div>
       <div class="icon">
         <i class="ion ion-person-add"></i>
       </div>
-      <a href="#" class="small-box-footer">
-        More info <i class="fa fa-arrow-circle-right"></i>
+      <a href="list_member.php" class="small-box-footer">
+        ดูเพิ่มเติม <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
   </div>
@@ -67,15 +71,15 @@ include '../admin/css.php'; ?>
     <!-- small box -->
     <div class="small-box bg-red">
       <div class="inner">
-        <h3>65</h3>
+        <h3><?php echo $row_view['SumView']; ?><sup style="font-size: 20px"> (ครั้ง)</sup></h3>
 
-        <p>Unique Visitors</p>
+        <p>จำนวน ผู้เข้าชมสินค้า</p>
       </div>
       <div class="icon">
         <i class="ion ion-pie-graph"></i>
       </div>
-      <a href="#" class="small-box-footer">
-        More info <i class="fa fa-arrow-circle-right"></i>
+      <a href="list_product.php" class="small-box-footer">
+        ดูเพิ่มเติม <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
   </div>
@@ -83,7 +87,7 @@ include '../admin/css.php'; ?>
 </div>
 <!-- /.row -->
 <hr>
-<!-- =========================================================== -->
+<!-- ======================การฟ=========================== -->
 <a href="?t=d" class="btn btn-warning "> รายงานประจำวัน </a> 
 <a href="?t=m" class="btn btn-success "> รายงานประจำเดือน </a> 
 <a href="?t=Y" class="btn btn-info "> รายงานประจำปี </a> 
@@ -118,7 +122,7 @@ $totol = implode(",", $totol);
 
 ?>
 
-<h3 align="center">รายงานยอดขายได้ในแบบกราฟ</h3>
+<h3 align="center">รายงานยอดขายในแบบกราฟ</h3>
 <table width="200" border="1" cellpadding="0"  cellspacing="0" align="center">
   <thead>
     <tr>

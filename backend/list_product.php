@@ -62,7 +62,25 @@ $totalRows_prd = mysql_num_rows($prd);
         <br>
         <?php include('menu.php');?>
       </div>
+
       <div class="col-md-10">
+
+<?php
+mysql_select_db($database_condb);
+$query_view = "SELECT p_qty , p_name FROM tbl_product ";
+$view = mysql_query($query_view, $condb) or die(mysql_error());
+$row_view = mysql_fetch_assoc($view);
+$totalRows_view = mysql_num_rows($view);
+
+do{
+
+if($row_view['p_qty'] < 5){
+  echo "<div class='alert alert-danger' role='alert'>สินค้า  ".$row_view['p_name']."  เหลือ ".$row_view['p_qty']." ชิ้น</div>";
+}else{}
+}while ($row_view = mysql_fetch_assoc($view));
+?>
+        
+
         <h3 align="center"> รายการสินค้า <a href="add_product.php" class="btn btn-primary"> เพิ่มสินค้า </a> </h3>
            <table width="100%" border="1" cellspacing="0" class="display" id="example">
 		<thead>
@@ -120,5 +138,7 @@ $totalRows_prd = mysql_num_rows($prd);
 </html>
 <?php
 mysql_free_result($prd);
+mysql_free_result($view);
+
 ?>
 <?php include('f.php');?>
