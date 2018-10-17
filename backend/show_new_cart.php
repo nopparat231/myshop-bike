@@ -87,7 +87,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
 					<?php echo $row_mycart['coid'];?>
 				</td>
 				<td align="center">
-					<?php echo number_format($row_mycart['ctotal']);?>
+					<?php echo number_format($row_mycart['ctotal'],2);?>
 				</td>
 				<td align="center" >
 					<font color="red">

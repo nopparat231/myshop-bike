@@ -38,10 +38,10 @@ date_default_timezone_set('Asia/Bangkok');
           <p>  414 Silom36 silomRd. Suriyawong Bangrak Bangkok (Thailand) 10500</p>
           <p> โทร. 081-493-3899 เลขประจําตวัผูเสียภาษอีากร 110200836647 </p>
           <p>&nbsp;</p>
-          <table width="416" border="1" cellpadding="0" cellspacing="0">
-            <tr>
-              <th width="406" align="left" scope="row"><h4><strong>ใบเสร็จรับเงิน / ใบกํากับภาษี</strong></h4>
-                <h4>ORIGINAL RECEIPT / TAX INVOICE </h4></th>
+          <table width="416" border="1" cellpadding="0" cellspacing="0"> 
+            <tr> 
+              <th width="406" scope="row"><h4 align="center"><strong>ใบเสร็จรับเงิน / ใบกํากับภาษี</strong></h4>
+                <h4 align="center">ORIGINAL RECEIPT / TAX INVOICE </h4></th>
               </tr>
             </table>
             <h4>&nbsp;</h4></th>

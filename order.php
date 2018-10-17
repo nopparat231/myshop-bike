@@ -122,12 +122,12 @@ if($_SESSION['MM_Username']!=''){
 
           echo "<tr class='success'>";
           echo "<td  align='left' colspan='6'><b>ภาษี 7%</b></td>";
-          echo "<td align='center'>"."<b>".number_format($tax)."</b>"."</td>";
+          echo "<td align='center'>"."<b>".number_format($tax,2)."</b>"."</td>";
           echo "</tr>";
 
           echo "<tr class='success'>";
           echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-          echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total)."</b>"."</td>";
+          echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".$total."</b>"."</td>";
 
           echo "</tr>";
 

@@ -39,13 +39,13 @@ $mem_id = mysql_insert_id($condb);
 		if($result){
 			echo "<script>";
 			echo "alert('บันทึกเรียบร้อย!');";
-			echo "window.location ='index.php?act=show-payed'; ";
+			echo "window.location ='index.php?act=show-post'; ";
 			echo "</script>";
 		} else {
 
 			echo "<script>";
 			echo "alert('ERROR!');";
-			echo "window.location ='add_mem.php'; ";
+			echo "window.location ='index.php?act=show-payed'; ";
 			echo "</script>";
 		}
 

@@ -37,6 +37,8 @@ if($act == 'update')
     {
         $_SESSION['shopping_cart'][$p_id] = $amount;
     }
+header("Location: confirm_order.php?oct=after");
+    // header("Location : confirm_order.php?p_id=$p_id&oct=after");
 }
 ?>
 
@@ -86,8 +88,8 @@ if(!empty($_SESSION['shopping_cart']))
 <tr >
 
 <td colspan="4" align="right" >
-    <input type="submit" name="button" id="button" value="คำนวน"  class="btn btn-warning" />
-    <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success" onclick="window.location='confirm_order.php?p_id=$p_id&oct=after';" />
+    <input type="submit" name="button" id="button" value="สั่งซื้อ"  class="btn btn-success" />
+   <!--  <input type="button" name="Submit2" value="สั่งซื้อ" class="btn btn-success" onclick="window.location.href = '?act=update'" /> -->
 </td>
 </tr>
 </table>

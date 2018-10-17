@@ -75,9 +75,11 @@ $totalRows_cartdone = mysql_num_rows($cartdone);
     
 <a href="../print_report.php?order_id=<?php echo $colname_cartdone;?>" class="btn btn-primary btn-sm pull-right" target="_blank" id="hp" >  <span class="icon icon-print"></span> พิมพ์ใบเสร็จ </a> 
 
- <a href="update_check_order.php?order_id=<?php echo $colname_cartdone;?>&order_status=2" class="btn btn-warning btn-sm pull-right" onClick="return confirm('ยืนยันการตรวจสอบ');" id="hp" >  <span class="icon icon-print"></span> ตรวจสอบแล้ว </a> 
+<?php if ($row_cartdone['order_status'] == 2): ?>
+   <a href="update_check_order.php?order_id=<?php echo $colname_cartdone;?>&order_status=4" class="btn btn-warning btn-sm pull-right" onClick="return confirm('ยืนยันการตรวจสอบ');" id="hp" >  <span class="icon icon-print"></span> ตรวจสอบแล้ว </a> 
 
 
+<?php endif ?>
 
       <td width="1558" colspan="6" align="center">
 

@@ -1,6 +1,8 @@
 <?php 
 ob_start();
-include('h.php');?>
+include('h.php');
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +37,10 @@ include('h.php');?>
       <br>
       <br>
 
-      <?php include('category.php');?>
+      <?php include('category.php');
+
+include 'check_order_date.php';
+      ?>
       <br />
 
       <a href="http://track.thailandpost.co.th/tracking/default.aspx" target="bank_">

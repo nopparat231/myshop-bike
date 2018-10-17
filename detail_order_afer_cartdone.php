@@ -202,12 +202,12 @@ input[type='radio']:checked:before {
 
     echo "<tr>";
     echo "<td  align='left' colspan='6'><b>ภาษี 7%</b></td>";
-    echo "<td align='center'>"."<b>".number_format($tax)."</b>"."</td>";
+    echo "<td align='center'>"."<b>".number_format($tax,2)."</b>"."</td>";
     echo "</tr>";
 
     echo "<tr class='success'>";
     echo "<td colspan='6' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-    echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total)."</b>"."</td>";
+    echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".$total."</b>"."</td>";
 
     echo "</tr>";
 
@@ -265,7 +265,7 @@ input[type='radio']:checked:before {
           <tr>
             <td align="center">จำนวนเงิน</td>
             <td colspan="5" align="left"><label for="pay_amount"></label>
-              <input type="text" name="pay_amount" id="pay_amount"  value="<?php echo number_format($total);?>" required="required"/></td>
+              <input type="text" name="pay_amount" id="pay_amount"  value="<?php echo $total;?>" required="required"/></td>
             </tr>
             <tr>
               <td align="center">&nbsp;</td>
