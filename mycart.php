@@ -98,12 +98,12 @@ $totalRows_mycart = mysql_num_rows($mycart);
 				</td>
 			</tr>
 
-		<?php } while ($row_mycart = mysql_fetch_assoc($mycart)); ?> 
+		<?php } while ($row_mycart = mysql_fetch_assoc($mycart));} ?> 
 	</table>
 
 	<?php
 
 	mysql_free_result($mycart);
 	mysql_free_result($mm);
-}
+
 ?>

@@ -38,6 +38,7 @@ if($act == 'update')
         $_SESSION['shopping_cart'][$p_id] = $amount;
 
     }
+
 }
 $q = $p_qty;
 ?>
@@ -85,9 +86,9 @@ $q = $p_qty;
 
 
                 echo "<td width='15%' align='center'>"; 
-
-                echo "<input type='number' value='$p_qty' size='1' name='amount[$p_id]' /></td>";
-
+?>
+                <input type='number' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
+<?php
 
                 echo "<td width='10%' align='center'>".number_format($ems). "</td>";
                 //echo "<input type='number' name='amount[$p_id]' value='$p_qty' size='2'/></td>";
