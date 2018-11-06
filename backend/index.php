@@ -28,15 +28,26 @@ include('access.php');?>
 
     </div>
     <div class="col-md-10 " >
-      <br />
-      <br />
-      <a href="index.php?act=show-new" class="btn btn-danger" id="hp">รอชำระเงิน</a>
+      
+      <?php 
+      if ($row_mm['status'] == 'staff') 
+       { ?>
+         <a href="index.php?act=show-new" class="btn btn-danger" id="hp">รอชำระเงิน</a>
+         <a href="index.php?act=show-check" class="btn btn-warning" id="hp">รอตรวจสอบ</a>
+         <a href="index.php?act=show-payed" class="btn btn-success" id="hp">ชำระเงินแล้ว</a>
+
+         <a href="index.php?act=show-post" class="btn btn-info" id="hp">ส่งของแล้ว</a>
+
+         <a href="index.php?act=show-cancel" class="btn" id="hp" style="background: #F57223; color: #ffffff  ">ยกเลิกคำสั่งซื้อ</a>
+       <?php } ?>
+
+    <!--   <a href="index.php?act=show-new" class="btn btn-danger" id="hp">รอชำระเงิน</a>
       <a href="index.php?act=show-check" class="btn btn-warning" id="hp">รอตรวจสอบ</a>
       <a href="index.php?act=show-payed" class="btn btn-success" id="hp">ชำระเงินแล้ว</a>
 
       <a href="index.php?act=show-post" class="btn btn-info" id="hp">ส่งของแล้ว</a>
 
-      <a href="index.php?act=show-cancel" class="btn" id="hp" style="background: #F57223; color: #ffffff  ">ยกเลิกคำสั่งซื้อ</a>
+      <a href="index.php?act=show-cancel" class="btn" id="hp" style="background: #F57223; color: #ffffff  ">ยกเลิกคำสั่งซื้อ</a> -->
       <br />
       <br />
       <?php
@@ -54,7 +65,7 @@ include('access.php');?>
       }elseif ($act == 'show-cancel'){
         include('show_cancel_cart.php');
       }else{
-        
+
         include 'tbl_order.php';
         include 'mm.php';
         if ($row_mm['status'] == 'admin') {

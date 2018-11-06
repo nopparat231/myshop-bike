@@ -87,7 +87,10 @@ $q = $p_qty;
 
                 echo "<td width='15%' align='center'>"; 
 ?>
-                <input type='number' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
+
+
+
+                <input type='text' style="text-align: center;" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
 <?php
 
                 echo "<td width='10%' align='center'>".number_format($ems). "</td>";

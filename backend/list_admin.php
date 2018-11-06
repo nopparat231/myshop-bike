@@ -61,10 +61,11 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
         <div class="col-md-10">
         <h3 align="center"> รายการ Admin  <a href="add_admin.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
         <div class="table-responsive">
-          <table id="example" class="display" cellspacing="0" border="1">
+          <table id="example" class="display" cellspacing="0" border="0">
     <thead>
             <tr align="center">
-              <th width="5%">id</th>
+              <th width="5%">ลำดับที่</th>
+              <th width="5%">รหัส</th>
               <th width="10%">ข้อมูล</th>
               <th width="15%">ที่อยู่</th>
               <th width="5%">สถานะ</th>
@@ -73,12 +74,15 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
               <th width="5%">ลบ</th>
             </tr>
         </thead>
-            <?php do { ?>
+            <?php 
+ $i = 1;
+            do { ?>
               <tr>
-                <td align="center"><?php echo $row_listadmin['admin_id']; ?></td>
+                <td align="center" valign="top"><?php echo $i; ?></td>
+                <td align="center">ADM<?php echo $row_listadmin['admin_id']; ?></td>
                 <td><?php echo "ชื่อ : ",$row_listadmin['admin_name']; ?><br />
                 <?php echo "User : ",$row_listadmin['admin_user']; ?><br />
-                <?php echo "Pass : ",$row_listadmin['admin_pass']; ?></td>
+                <?php echo "Pass : ",'**********'; ?></td>
                 <td><?php echo "ที่อยู่ : " ,$row_listadmin['admin_address']; ?><br />
                   <?php echo "เบอร์โทร : " ,$row_listadmin['admin_tel']; ?><br />
                   <?php echo "E-mail : " ,$row_listadmin['admin_email']; ?>
@@ -88,7 +92,9 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
                 <td><center> <a href="edit_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
                 <td><center> <a href="del_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
               </tr>
-              <?php } while ($row_listadmin = mysql_fetch_assoc($listadmin)); ?>
+              <?php
+$i += 1;
+               } while ($row_listadmin = mysql_fetch_assoc($listadmin)); ?>
           </table>
         </div>
         </div>

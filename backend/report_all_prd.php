@@ -80,10 +80,11 @@ $totalRows_prd = mysql_num_rows($prd);
 th { white-space: nowrap; }
 </style>
       <h3 align="center"> รายการสินค้า  </h3>
-      <table width="100%" border="0" cellspacing="0" class="display" id="example">
+      <table width="100%" border="0" cellspacing="0" class="display" id="example3">
         
         <thead>
           <tr>
+            
             <th width="5%">ลำดับที่</th>
             <th width="15%">ประเภท</th>
             <th width="25%">ชื่อสินค้า</th>

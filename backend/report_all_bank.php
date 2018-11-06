@@ -32,10 +32,10 @@ if (!function_exists("GetSQLValueString")) {
 }
 
 mysql_select_db($database_condb);
-$query_mem = "SELECT * FROM tbl_member ORDER BY mem_id ASC";
-$mem = mysql_query($query_mem, $condb) or die(mysql_error());
-$row_mem = mysql_fetch_assoc($mem);
-$totalRows_mem = mysql_num_rows($mem);
+$query_lbk = "SELECT * FROM tbl_bank ";
+$lbk = mysql_query($query_lbk, $condb) or die(mysql_error());
+$row_lbk = mysql_fetch_assoc($lbk);
+$totalRows_lbk = mysql_num_rows($lbk);
 ?>
 <?php include('access.php');?>
 <!DOCTYPE html>
@@ -53,45 +53,46 @@ $totalRows_mem = mysql_num_rows($mem);
      <?php include('banner.php');?>
    </div>
    <div class="row">
-     <div class="col-md-2">
+    <div class="col-md-2">
 
       <br>
       <?php include('menu.php');?>
     </div>
     <div class="col-md-10">
-      <h3 align="center"> รายการ member  <a href="add_mem.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+      <h3 align="center"> รายการ ธนาคาร   </h3>
       <table id="example" class="display" cellspacing="0" border="0">
         <thead>
           <tr align="center">
-            <th width="5%">ลำดับที่</th>
-            <th width="5%">รหัส</th>
-            <th width="10%">ข้อมูล</th>
-            <th width="15%">ที่อยู่</th>
-            <th width="5%">วันที่สมัคร</th>
-            <th width="5%">แก้ไข </th>
-            <th width="5%">ลบ</th>
+            <th>ลำดับที่</th>
+            <th>ชื่ิอธนาคาร</th>
+            <th>เลขบัญชี</th>
+            <th>ประเภท</th>
+
+            <th>สาขา</th>
+            
+            <th>ชื่อบัญชี</th>
+
+
           </tr>
         </thead>
-        <?php 
+        <?php
         $i = 1;
         do { ?>
           <tr>
-           <td align="center" valign="top"><?php echo $i; ?></td>
-           <td align="center">US<?php echo $row_mem['mem_id']; ?></td>
-           <td><?php echo "ชื่อ : ",$row_mem['mem_name']; ?><br />
-            <?php echo "User : ",$row_mem['mem_username']; ?><br />
-            <?php echo "Pass : ",'**********' ?></td>
-            <td><?php echo "ที่อยู่ : " ,$row_mem['mem_address']; ?><br />
-              <?php echo "เบอร์โทร : " ,$row_mem['mem_tel']; ?><br />
-              <?php echo "E-mail : " ,$row_mem['mem_email']; ?>
-            </td>
-            <td><?php echo $row_mem['dateinsert']; ?></td>
-            <td><center> <a href="edit_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
-            <td><center> <a href="del_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
+            <td align="center" valign="top"><?php echo $i; ?></td>
+
+            <td align="center" valign="top"><?php echo $row_lbk['b_name']; ?></td>
+            <td align="center" valign="top"><?php echo $row_lbk['b_number']; ?></td>
+            <td align="center" valign="top"><?php echo $row_lbk['b_type']; ?></td>
+            <td align="center" valign="top"><?php echo $row_lbk['bn_name']; ?></td>
+            <td align="center" valign="top"><?php echo $row_lbk['b_owner']; ?></td>
+
+
+
           </tr>
-          <?php 
+          <?php
           $i += 1;
-        } while ($row_mem = mysql_fetch_assoc($mem)); ?>
+        } while ($row_lbk = mysql_fetch_assoc($lbk)); ?>
       </table>
     </div>
   </div>
@@ -99,6 +100,6 @@ $totalRows_mem = mysql_num_rows($mem);
 </body>
 </html>
 <?php
-mysql_free_result($mem);
+mysql_free_result($lbk);
 ?>
-<?php // include('f.php');?>
+<?php  include('f.php');?>

@@ -74,7 +74,7 @@ if($act == 'update')
 
                 ?>
                 
-                <input type='number' value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
+                <input type='text' style="text-align: center;" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
                 <?php
 
                 echo "<td width='20%' align='right'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' style='color: red' ></span></a></td>";

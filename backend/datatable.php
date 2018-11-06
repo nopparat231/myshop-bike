@@ -47,6 +47,45 @@
         ],
        
 
+			"aaSorting" :[[0,'asc']],
+
+			"language": {
+				"lengthMenu": "แสดง _MENU_ หน้า",
+				"zeroRecords": "ค้นหาไม่พบ",
+				"info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
+				"infoEmpty": "ไม่พบข้อมูลในตาราง",
+				"infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
+			}
+
+
+			
+	  //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
+
+	});
+
+
+		$('#example3').DataTable( {
+
+
+			dom: 'Bfrtip',
+			buttons: [
+			{
+				extend: 'excelHtml5',
+				title: 'Data export',
+                        footer: true
+			},
+			{
+				extend: 'pageLength',
+				title: 'Data export'
+			}
+			],
+
+			lengthMenu: [
+            [ 10, 25, 50, -1 ],
+            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+        ],
+       
+
 
 			"footerCallback": function ( row, data, start, end, display ) {
 				var api = this.api(), data;
