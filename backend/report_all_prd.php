@@ -67,7 +67,7 @@ $totalRows_prd = mysql_num_rows($prd);
 
       <?php
       mysql_select_db($database_condb);
-      $query_view = "SELECT p_qty , p_name , sum(p_price) as sump FROM tbl_product";
+      $query_view = "SELECT p_qty , p_name FROM tbl_product";
       $view = mysql_query($query_view, $condb) or die(mysql_error());
       $row_view = mysql_fetch_assoc($view);
       $totalRows_view = mysql_num_rows($view);
@@ -80,7 +80,7 @@ $totalRows_prd = mysql_num_rows($prd);
 th { white-space: nowrap; }
 </style>
       <h3 align="center"> รายการสินค้า  </h3>
-      <table width="100%" border="1" cellspacing="0" class="display" id="example">
+      <table width="100%" border="0" cellspacing="0" class="display" id="example">
         
         <thead>
           <tr>
@@ -124,9 +124,7 @@ th { white-space: nowrap; }
               <?php echo $row_prd['p_view'];?>
             </td>
             <td align="right" valign="top"><?php echo number_format($row_prd['p_price'],2); ?></td>
-           
-
-
+           </tr>
             <?php
             $i += 1;
           } while ($row_prd = mysql_fetch_assoc($prd)); ?>
@@ -134,7 +132,13 @@ th { white-space: nowrap; }
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="7" style="text-align:right">Total:</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th style="text-align:right">Total:</th>
                 <th></th>
             </tr>
         </tfoot>
@@ -149,4 +153,4 @@ mysql_free_result($prd);
 mysql_free_result($view);
 
 ?>
-<?php include('f.php');?>
+<?php //include('f.php');?>

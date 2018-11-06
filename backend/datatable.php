@@ -32,7 +32,8 @@
 			buttons: [
 			{
 				extend: 'excelHtml5',
-				title: 'Data export'
+				title: 'Data export',
+                        footer: true
 			},
 			{
 				extend: 'pageLength',
@@ -96,6 +97,153 @@
 	  //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
 
 	});
+
+            $('#example1').DataTable( {
+
+
+                  dom: 'Bfrtip',
+                  buttons: [
+                  {
+                        extend: 'excelHtml5',
+                        title: 'Data export',
+                        footer: true
+                  },
+                  {
+                        extend: 'pageLength',
+                        title: 'Data export'
+                  }
+                  ],
+
+                  lengthMenu: [
+            [ 10, 25, 50, -1 ],
+            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+        ],
+       
+
+
+                  "footerCallback": function ( row, data, start, end, display ) {
+                        var api = this.api(), data;
+
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                  return typeof i === 'string' ?
+                  i.replace(/[\$,]/g, '')*1 :
+                  typeof i === 'number' ?
+                  i : 0;
+            };
+
+            //Total over all pages
+            total = api
+            .column( 1 )
+            .data()
+            .reduce( function (a, b) {
+                  return intVal(a) + intVal(b);
+            }, 0 );
+
+            // Total over this page
+            pageTotal = api
+            .column( 1, { page: 'current'} )
+            .data()
+            .reduce( function (a, b) {
+                  return intVal(a) + intVal(b);
+            }, 0 );
+
+            // Update footer
+            $( api.column( 1 ).footer() ).html(
+                  pageTotal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+                  
+                  
+        },
+
+                  "aaSorting" :[[0,'asc']],
+
+                  "language": {
+                        "lengthMenu": "แสดง _MENU_ หน้า",
+                        "zeroRecords": "ค้นหาไม่พบ",
+                        "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
+                        "infoEmpty": "ไม่พบข้อมูลในตาราง",
+                        "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
+                  }
+
+
+                  
+        //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
+
+      });
+
+            $('#example2').DataTable( {
+
+
+                  dom: 'Bfrtip',
+                  buttons: [
+                  {
+                        extend: 'excelHtml5',
+                        title: 'รายสั่งซื้อ',
+                        footer: true
+                  },
+                  {
+                        extend: 'pageLength'
+                  }
+                  ],
+
+                  lengthMenu: [
+                  [ 10, 25, 50, -1 ],
+                  [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+                  ],
+
+
+                  "aaSorting" :[[0,'asc']],
+
+                  "language": {
+                        "lengthMenu": "แสดง _MENU_ หน้า",
+                        "zeroRecords": "ค้นหาไม่พบ",
+                        "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
+                        "infoEmpty": "ไม่พบข้อมูลในตาราง",
+                        "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
+                  },
+
+
+
+                  "footerCallback": function ( row, data, start, end, display ) {
+                        var api = this.api(), data;
+
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                  return typeof i === 'string' ?
+                  i.replace(/[\$,]/g, '')*1 :
+                  typeof i === 'number' ?
+                  i : 0;
+            };
+
+            //Total over all pages
+            total = api
+            .column( 6 )
+            .data()
+            .reduce( function (a, b) {
+                  return intVal(a) + intVal(b);
+            }, 0 );
+
+            // Total over this page
+            pageTotal = api
+            .column( 6, { page: 'current'} )
+            .data()
+            .reduce( function (a, b) {
+                  return intVal(a) + intVal(b);
+            }, 0 );
+
+            // Update footer
+            $( api.column( 6 ).footer() ).html(
+                  pageTotal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
+
+
+        }
+
+
+
+        //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
+
+      });
+
 
 	} );
 </script>

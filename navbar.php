@@ -85,7 +85,7 @@ echo "<li><a href='my_order.php?page=mycart'><span class='glyphicon glyphicon-th
 echo "<li>";
 echo"<a href='profile.php'>";
 echo"<span class='glyphicon glyphicon-user
-'>คุณ ".$row_mlogin['mem_name'];
+'>คุณ ".$mm;
 echo"</span></a>";
 echo"</li>";
 
