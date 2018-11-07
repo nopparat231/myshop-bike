@@ -21,74 +21,81 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 <script>		
 	$(document).ready(function() {
 
-		$('#example').DataTable( {
+       $('.input-daterange').datepicker({
+        todayBtn:'linked',
+        format: "yyyy-mm-dd",
+        autoclose: true
+  });
+
+       $('#example').DataTable( {
 
 
-			dom: 'Bfrtip',
-			buttons: [
-			{
-				extend: 'excelHtml5',
-				title: 'Data export',
-                        footer: true
-			},
-			{
-				extend: 'pageLength',
-				title: 'Data export'
-			}
-			],
+         dom: 'Bfrtip',
+         buttons: [
+         {
+          extend: 'excelHtml5',
+          title: 'Data export',
+          footer: true
+    },
+    {
+        extend: 'pageLength',
+        title: 'Data export'
+  }
+  ],
 
-			lengthMenu: [
-            [ 10, 25, 50, -1 ],
-            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-        ],
-       
-
-			"aaSorting" :[[0,'asc']],
-
-			"language": {
-				"lengthMenu": "แสดง _MENU_ หน้า",
-				"zeroRecords": "ค้นหาไม่พบ",
-				"info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
-				"infoEmpty": "ไม่พบข้อมูลในตาราง",
-				"infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
-			}
+  lengthMenu: [
+  [ 10, 25, 50, -1 ],
+  [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+  ],
 
 
-			
+  "aaSorting" :[[0,'asc']],
+
+  "language": {
+        "lengthMenu": "แสดง _MENU_ หน้า",
+        "zeroRecords": "ค้นหาไม่พบ",
+        "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
+        "infoEmpty": "ไม่พบข้อมูลในตาราง",
+        "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
+  }
+
+
+
 	  //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
 
 	});
 
 
-		$('#example3').DataTable( {
+       $('#example3').DataTable( {
 
 
-			dom: 'Bfrtip',
-			buttons: [
-			{
-				extend: 'excelHtml5',
-				title: 'Data export',
-                        footer: true
-			},
-			{
-				extend: 'pageLength',
-				title: 'Data export'
-			}
-			],
+         dom: 'Bfrtip',
+         buttons: [
+         {
+          extend: 'excelHtml5',
+          title: 'Data export',
+          footer: true
+    },
+    {
+        extend: 'pageLength',
+        title: 'Data export'
+  }
+  ],
 
-			lengthMenu: [
-            [ 10, 25, 50, -1 ],
-            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-        ],
-       
+  lengthMenu: [
+  [ 10, 25, 50, -1 ],
+  [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+  ],
 
 
-			"footerCallback": function ( row, data, start, end, display ) {
-				var api = this.api(), data;
+
+  "footerCallback": function ( row, data, start, end, display ) {
+        var api = this.api(), data;
 
             // Remove the formatting to get integer data for summation
             var intVal = function ( i ) {
@@ -117,51 +124,51 @@
             // Update footer
             $( api.column( 7 ).footer() ).html(
             	pageTotal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
-            	
-            	
-        },
-
-			"aaSorting" :[[0,'asc']],
-
-			"language": {
-				"lengthMenu": "แสดง _MENU_ หน้า",
-				"zeroRecords": "ค้นหาไม่พบ",
-				"info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
-				"infoEmpty": "ไม่พบข้อมูลในตาราง",
-				"infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
-			}
 
 
-			
+      },
+
+      "aaSorting" :[[0,'asc']],
+
+      "language": {
+        "lengthMenu": "แสดง _MENU_ หน้า",
+        "zeroRecords": "ค้นหาไม่พบ",
+        "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
+        "infoEmpty": "ไม่พบข้อมูลในตาราง",
+        "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
+  }
+
+
+
 	  //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
 
 	});
 
-            $('#example1').DataTable( {
+       $('#example1').DataTable( {
 
 
-                  dom: 'Bfrtip',
-                  buttons: [
-                  {
-                        extend: 'excelHtml5',
-                        title: 'Data export',
-                        footer: true
-                  },
-                  {
-                        extend: 'pageLength',
-                        title: 'Data export'
-                  }
-                  ],
+            dom: 'Bfrtip',
+            buttons: [
+            {
+                  extend: 'excelHtml5',
+                  title: 'Data export',
+                  footer: true
+            },
+            {
+                  extend: 'pageLength',
+                  title: 'Data export'
+            }
+            ],
 
-                  lengthMenu: [
+            lengthMenu: [
             [ 10, 25, 50, -1 ],
             [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-        ],
-       
+            ],
 
 
-                  "footerCallback": function ( row, data, start, end, display ) {
-                        var api = this.api(), data;
+
+            "footerCallback": function ( row, data, start, end, display ) {
+                  var api = this.api(), data;
 
             // Remove the formatting to get integer data for summation
             var intVal = function ( i ) {
@@ -190,61 +197,51 @@
             // Update footer
             $( api.column( 1 ).footer() ).html(
                   pageTotal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
-                  
-                  
-        },
-
-                  "aaSorting" :[[0,'asc']],
-
-                  "language": {
-                        "lengthMenu": "แสดง _MENU_ หน้า",
-                        "zeroRecords": "ค้นหาไม่พบ",
-                        "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
-                        "infoEmpty": "ไม่พบข้อมูลในตาราง",
-                        "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
-                  }
 
 
-                  
+      },
+
+      "aaSorting" :[[0,'asc']],
+
+      "language": {
+            "lengthMenu": "แสดง _MENU_ หน้า",
+            "zeroRecords": "ค้นหาไม่พบ",
+            "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
+            "infoEmpty": "ไม่พบข้อมูลในตาราง",
+            "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
+      }
+
+
+
         //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
 
-      });
+  });
 
-            $('#example2').DataTable( {
-
-
-                  dom: 'Bfrtip',
-                  buttons: [
-                  {
-                        extend: 'excelHtml5',
-                        title: 'รายสั่งซื้อ',
-                        footer: true
-                  },
-                  {
-                        extend: 'pageLength'
-                  }
-                  ],
-
-                  lengthMenu: [
-                  [ 10, 25, 50, -1 ],
-                  [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-                  ],
+       $('#example2').DataTable( {
 
 
-                  "aaSorting" :[[0,'asc']],
+            dom: 'Bfrtip',
+            buttons: [
+            {
+                  extend: 'excelHtml5',
+                  title: 'Data export',
+                  footer: true
+            },
+            {
+                  extend: 'pageLength',
+                  title: 'Data export'
+            }
+            ],
 
-                  "language": {
-                        "lengthMenu": "แสดง _MENU_ หน้า",
-                        "zeroRecords": "ค้นหาไม่พบ",
-                        "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
-                        "infoEmpty": "ไม่พบข้อมูลในตาราง",
-                        "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
-                  },
+            lengthMenu: [
+            [ 10, 25, 50, -1 ],
+            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+            ],
 
 
 
-                  "footerCallback": function ( row, data, start, end, display ) {
-                        var api = this.api(), data;
+            "footerCallback": function ( row, data, start, end, display ) {
+                  var api = this.api(), data;
 
             // Remove the formatting to get integer data for summation
             var intVal = function ( i ) {
@@ -275,14 +272,26 @@
                   pageTotal.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
 
 
-        }
+      },
+
+      "aaSorting" :[[0,'asc']],
+
+      "language": {
+            "lengthMenu": "แสดง _MENU_ หน้า",
+            "zeroRecords": "ค้นหาไม่พบ",
+            "info": "แสดงหน้า _PAGE_ ถึง _PAGES_",
+            "infoEmpty": "ไม่พบข้อมูลในตาราง",
+            "infoFiltered": "(กรองจาก _MAX_ จำนวนตรารงทั้งหมด)"
+      }
 
 
 
         //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
 
-      });
+  });
 
 
-	} );
+           
+      } );
+
 </script>

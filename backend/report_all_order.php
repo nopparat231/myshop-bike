@@ -82,6 +82,8 @@ $totalRows_mycart = mysql_num_rows($mycart);
     </style>
 
     <h3 align="center">รายสั่งซื้อ</h3>
+  
+
     <table id="example2" class="display"  border="0">
       <thead>
         <tr>
@@ -91,7 +93,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
           <th>รายการ</th>
 
           <th>สถานะ</th>
-          <!-- <th width="10%">แก้ไขสถานะ</th> -->
+        
           <th>วันที่ทำรายการ</th>
           <th>ราคารวม</th>
         </tr>
