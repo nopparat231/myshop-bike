@@ -9,7 +9,7 @@
 		<il><a href="list_admin.php" class="list-group-item">รายงานผู้ดูแลระบบ</a></il>
 		<il><a href="list_member.php" class="list-group-item">รายงานข้อมูลสมาชิค</a></il>
 		<il><a href="report_all_prd.php" class="list-group-item">รายงานข้อมูลสินค้า</a></il>
-		<il><a href="report_all_order.php" class="list-group-item">รายงานการสั่งซื้อ</a></il>
+		<il><a href="report_order.php" class="list-group-item">รายงานการสั่งซื้อ</a></il>
 		<il><a href="report_all_type.php" class="list-group-item">รายงานประเภทสินค้า</a></il>
 		<il><a href="report_all_bank.php" class="list-group-item">รายงานข้อมูลธนาคาร</a></il>
 		<il><a href="logout_admin.php" class="list-group-item list-group-item-danger">-ออกจากระบบ</a></il>
