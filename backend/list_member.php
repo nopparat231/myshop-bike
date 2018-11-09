@@ -59,7 +59,7 @@ $totalRows_mem = mysql_num_rows($mem);
       <?php include('menu.php');?>
     </div>
     <div class="col-md-10">
-      <h3 align="center"> รายการ member  <a href="add_mem.php" class="btn btn-primary"> + เพิ่ม </a> </h3>
+      <h3 align="center"> รายการ ข้อมูลสมาชิค </h3>
       <table id="example" class="display" cellspacing="0" border="0">
         <thead>
           <tr align="center">

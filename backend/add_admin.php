@@ -75,8 +75,12 @@
           <div class="col-sm-7" align="left">
 
             <select name="admin_status">
+              <?php if (isset($_GET['admin'])): ?>
+                 <option value="admin">admin</option>
+              <?php endif ?>
+                <?php if (isset($_GET['staff'])): ?>
              <option value="staff">staff</option>
-             <option value="admin">admin</option>
+             <?php endif ?>
 
           </select>
          </div>
