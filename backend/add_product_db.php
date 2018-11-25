@@ -14,6 +14,7 @@ $numrand = (mt_rand());
 $p_name = $_POST['p_name'];
 $t_id = $_POST['t_id'];
 $p_detial = $_POST['p_detial'];
+$p_price_a = $_POST['p_price_a'];
 $p_price = $_POST['p_price'];
 $p_qty = $_POST['p_qty'];
 $p_size = $_POST['p_size'];
@@ -69,6 +70,7 @@ $sql ="INSERT INTO tbl_product
 	p_name,
 	t_id,
 	p_detial,
+	p_price_a,
 	p_price,
 	p_qty,
 	p_size,
@@ -84,6 +86,7 @@ $sql ="INSERT INTO tbl_product
 	'$p_name',
 	'$t_id',
 	'$p_detial',
+	'$p_price_a',
 	'$p_price',
 	'$p_qty',
 	'$p_size',

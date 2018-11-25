@@ -155,10 +155,20 @@ do {
       <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
+      <td align="right" valign="middle">ราคาต้นทุน :</td>
+      <td width="190"><label for="p_price_a"></label>
+         <input type="number" name="p_price_a" id="p_price_a" required/></td>
+      <td width="281">&nbsp;</td>
+    </tr>
+     <tr>
+      <td align="right" valign="middle">&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+      <tr>
       <td align="right" valign="middle">ราคาขาย :</td>
       <td width="190"><label for="p_price"></label>
          <input type="number" name="p_price" id="p_price" required/></td>
-      <td width="281">&nbsp;  </td>
+      <td width="281">&nbsp;</td>
     </tr>
     <tr>
       <td align="right" valign="middle">&nbsp;</td>

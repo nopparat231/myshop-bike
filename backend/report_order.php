@@ -52,7 +52,7 @@
 
     <h3 align="center">รายสั่งซื้อ</h3>
   
-    <div class="row">
+    <div class="row" id="hp">
      <div class="input-daterange">
        <div class="col-md-1">
         <label><font size="2">จากวันที่</font></label> 
@@ -87,6 +87,9 @@
        
       </table>
     </div>
+    <div class="col-md-2">
+      <input type="button" name="search" id="hp" value="พิมพ์" onclick="print()" class="btn btn-info" />
+     </div>
   </div>
 </div>
 </body>
@@ -110,42 +113,11 @@ $(document).ready(function(){
   var dataTable = $('#order_data').DataTable({
    "processing" : true,
    "serverSide" : true,
-    dom: 'Bfrtip',
-         buttons: [
-         {
-          extend: 'excelHtml5',
-          title: 'Data export',
-          footer: true
-    },
-    {
-        extend: 'pageLength',
-        title: 'Data export'
-  }
-  ],
+   
+    "language": {
+        "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Thai.json"
+       
 
-
-   "language": {
-    "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-    "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-    "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-    "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
-    "sInfoPostFix":    "",
-    "sInfoThousands":  ",",
-    "sLengthMenu":     "แสดง _MENU_ แถว",
-    "sLoadingRecords": "กำลังโหลดข้อมูล...",
-    "sProcessing":     "กำลังดำเนินการ...",
-    "sSearch":         "ค้นหา: ",
-    "sZeroRecords":    "ไม่พบข้อมูล",
-    "oPaginate": {
-        "sFirst":    "หน้าแรก",
-    "sPrevious": "ก่อนหน้า",
-        "sNext":     "ถัดไป",
-    "sLast":     "หน้าสุดท้าย"
-    },
-    "oAria": {
-        "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
-    "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
-    }
 },
 
    "order" : [],

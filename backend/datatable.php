@@ -16,6 +16,8 @@
 
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
 
+
+
 <!-- -----css-- -->
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -35,49 +37,11 @@
            $('#example').DataTable( {
 
 
-               dom: 'Bfrtip',
-               buttons: [
-               {
-                    extend: 'excelHtml5',
-                    title: 'Data export',
-                    footer: true
-              },
-              {
-                extend: 'pageLength',
-                title: 'Data export'
-          }
-          ],
-
-          lengthMenu: [
-          [ 10, 25, 50, -1 ],
-          [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-          ],
-
-
+              
           "aaSorting" :[[0,'asc']],
 
           "language": {
-              "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-              "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-              "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-              "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
-              "sInfoPostFix":    "",
-              "sInfoThousands":  ",",
-              "sLengthMenu":     "แสดง _MENU_ แถว",
-              "sLoadingRecords": "กำลังโหลดข้อมูล...",
-              "sProcessing":     "กำลังดำเนินการ...",
-              "sSearch":         "ค้นหา: ",
-              "sZeroRecords":    "ไม่พบข้อมูล",
-              "oPaginate": {
-                "sFirst":    "หน้าแรก",
-                "sPrevious": "ก่อนหน้า",
-                "sNext":     "ถัดไป",
-                "sLast":     "หน้าสุดท้าย"
-          },
-          "oAria": {
-                "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
-                "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
-          }
+            "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Thai.json"
     }
 
 
@@ -88,26 +52,6 @@
 
 
            $('#example3').DataTable( {
-
-
-               dom: 'Bfrtip',
-               buttons: [
-               {
-                    extend: 'excelHtml5',
-                    title: 'Data export',
-                    footer: true
-              },
-              {
-                extend: 'pageLength',
-                title: 'Data export'
-          }
-          ],
-
-          lengthMenu: [
-          [ 10, 25, 50, -1 ],
-          [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-          ],
-
 
 
           "footerCallback": function ( row, data, start, end, display ) {
@@ -148,27 +92,7 @@
       "aaSorting" :[[0,'asc']],
 
       "language": {
-        "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
-        "sInfoPostFix":    "",
-        "sInfoThousands":  ",",
-        "sLengthMenu":     "แสดง _MENU_ แถว",
-        "sLoadingRecords": "กำลังโหลดข้อมูล...",
-        "sProcessing":     "กำลังดำเนินการ...",
-        "sSearch":         "ค้นหา: ",
-        "sZeroRecords":    "ไม่พบข้อมูล",
-        "oPaginate": {
-          "sFirst":    "หน้าแรก",
-          "sPrevious": "ก่อนหน้า",
-          "sNext":     "ถัดไป",
-          "sLast":     "หน้าสุดท้าย"
-    },
-    "oAria": {
-          "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
-          "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
-    }
+         "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Thai.json"
 }
 
 
@@ -180,26 +104,7 @@
            $('#example1').DataTable( {
 
 
-            dom: 'Bfrtip',
-            buttons: [
-            {
-                  extend: 'excelHtml5',
-                  title: 'Data export',
-                  footer: true
-            },
-            {
-                  extend: 'pageLength',
-                  title: 'Data export'
-            }
-            ],
-
-            lengthMenu: [
-            [ 10, 25, 50, -1 ],
-            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-            ],
-
-
-
+            
             "footerCallback": function ( row, data, start, end, display ) {
                   var api = this.api(), data;
 
@@ -238,28 +143,8 @@
       "aaSorting" :[[0,'asc']],
 
       "language": {
-        "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
-        "sInfoPostFix":    "",
-        "sInfoThousands":  ",",
-        "sLengthMenu":     "แสดง _MENU_ แถว",
-        "sLoadingRecords": "กำลังโหลดข้อมูล...",
-        "sProcessing":     "กำลังดำเนินการ...",
-        "sSearch":         "ค้นหา: ",
-        "sZeroRecords":    "ไม่พบข้อมูล",
-        "oPaginate": {
-          "sFirst":    "หน้าแรก",
-          "sPrevious": "ก่อนหน้า",
-          "sNext":     "ถัดไป",
-          "sLast":     "หน้าสุดท้าย"
-    },
-    "oAria": {
-          "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
-          "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
-    }
-}
+        "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Thai.json"
+       }
 
 
 
@@ -270,26 +155,7 @@
            $('#example2').DataTable( {
 
 
-            dom: 'Bfrtip',
-            buttons: [
-            {
-                  extend: 'excelHtml5',
-                  title: 'Data export',
-                  footer: true
-            },
-            {
-                  extend: 'pageLength',
-                  title: 'Data export'
-            }
-            ],
-
-            lengthMenu: [
-            [ 10, 25, 50, -1 ],
-            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
-            ],
-
-
-
+           
             "footerCallback": function ( row, data, start, end, display ) {
                   var api = this.api(), data;
 
@@ -328,27 +194,7 @@
       "aaSorting" :[[0,'asc']],
 
       "language": {
-        "sEmptyTable":     "ไม่มีข้อมูลในตาราง",
-        "sInfo":           "แสดง _START_ ถึง _END_ จาก _TOTAL_ แถว",
-        "sInfoEmpty":      "แสดง 0 ถึง 0 จาก 0 แถว",
-        "sInfoFiltered":   "(กรองข้อมูล _MAX_ ทุกแถว)",
-        "sInfoPostFix":    "",
-        "sInfoThousands":  ",",
-        "sLengthMenu":     "แสดง _MENU_ แถว",
-        "sLoadingRecords": "กำลังโหลดข้อมูล...",
-        "sProcessing":     "กำลังดำเนินการ...",
-        "sSearch":         "ค้นหา: ",
-        "sZeroRecords":    "ไม่พบข้อมูล",
-        "oPaginate": {
-          "sFirst":    "หน้าแรก",
-          "sPrevious": "ก่อนหน้า",
-          "sNext":     "ถัดไป",
-          "sLast":     "หน้าสุดท้าย"
-    },
-    "oAria": {
-          "sSortAscending":  ": เปิดใช้งานการเรียงข้อมูลจากน้อยไปมาก",
-          "sSortDescending": ": เปิดใช้งานการเรียงข้อมูลจากมากไปน้อย"
-    }
+        "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Thai.json"
 }
 
 

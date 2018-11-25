@@ -70,8 +70,8 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
               <th width="15%">ที่อยู่</th>
               <th width="5%">สถานะ</th>
               <th width="5%">วันที่สมัคร</th>
-              <th width="5%">แก้ไข </th>
-              <th width="5%">ลบ</th>
+              <th width="5%"  id="hp">แก้ไข </th>
+              <th width="5%" id="hp" >ลบ</th>
             </tr>
         </thead>
             <?php 
@@ -89,14 +89,17 @@ $totalRows_listadmin = mysql_num_rows($listadmin);
                 </td>
                 <td align="center"><?php echo $row_listadmin['status']; ?><br />
                 <td align="center"><?php echo $row_listadmin['date_save']; ?></td>
-                <td><center> <a href="edit_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
-                <td><center> <a href="del_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
+                <td><center> <a href="edit_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>"  id="hp" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
+                <td><center> <a href="del_admin.php?admin_id=<?php echo $row_listadmin['admin_id'];?>" onClick="return confirm('ยืนยันการลบ');" id="hp" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
               </tr>
               <?php
 $i += 1;
                } while ($row_listadmin = mysql_fetch_assoc($listadmin)); ?>
           </table>
         </div>
+          <div class="col-md-2">
+      <input type="button" name="search" id="hp" value="พิมพ์" onclick="print()" class="btn btn-info" />
+     </div>
         </div>
     </div>
  </div>

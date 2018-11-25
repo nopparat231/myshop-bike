@@ -85,7 +85,11 @@ $i = 1;
         </tbody>
         </table>
       </div>
+      <div class="col-md-2">
+      <input type="button" name="search" id="hp" value="พิมพ์" onclick="print()" class="btn btn-info" />
+     </div>
     </div>
+
  </div>
   </body>
 </html>

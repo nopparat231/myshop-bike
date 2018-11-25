@@ -68,8 +68,8 @@ $totalRows_mem = mysql_num_rows($mem);
             <th width="10%">ข้อมูล</th>
             <th width="15%">ที่อยู่</th>
             <th width="5%">วันที่สมัคร</th>
-            <th width="5%">แก้ไข </th>
-            <th width="5%">ลบ</th>
+            <th width="5%"  id="hp">แก้ไข </th>
+            <th width="5%"  id="hp">ลบ</th>
           </tr>
         </thead>
         <?php 
@@ -86,13 +86,16 @@ $totalRows_mem = mysql_num_rows($mem);
               <?php echo "E-mail : " ,$row_mem['mem_email']; ?>
             </td>
             <td><?php echo $row_mem['dateinsert']; ?></td>
-            <td><center> <a href="edit_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
-            <td><center> <a href="del_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" onClick="return confirm('ยืนยันการลบ');" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
+            <td><center> <a href="edit_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" id="hp" class="btn btn-warning btn-xs"> แก้ไข </a> </center> </td>
+            <td><center> <a href="del_mem.php?mem_id=<?php echo $row_mem['mem_id'];?>" onClick="return confirm('ยืนยันการลบ');"  id="hp" class="btn btn-danger btn-xs"> ลบ </a> </center> </td>
           </tr>
           <?php 
           $i += 1;
         } while ($row_mem = mysql_fetch_assoc($mem)); ?>
       </table>
+        <div class="col-md-2">
+      <input type="button" name="search" id="hp" value="พิมพ์" onclick="print()" class="btn btn-info" />
+     </div>
     </div>
   </div>
 </div>

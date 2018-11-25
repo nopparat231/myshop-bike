@@ -96,6 +96,9 @@ $totalRows_lbk = mysql_num_rows($lbk);
       </table>
     </div>
   </div>
+  <div class="col-md-2">
+      <input type="button" name="search" id="hp" value="พิมพ์" onclick="print()" class="btn btn-info" />
+     </div>
 </div>
 </body>
 </html>

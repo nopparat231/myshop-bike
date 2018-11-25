@@ -169,6 +169,16 @@ do {
       <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
+      <td align="right" valign="middle">ราคาต้นทุน :</td>
+      <td width="190"><label for="p_price_a"></label>
+         <input name="p_price_a" type="number" required id="p_price_a" value="<?php echo $row_eprd['p_price_a']; ?>"/></td>
+      <td width="281">&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right" valign="middle">&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
       <td align="right" valign="middle">ราคาขาย :</td>
       <td width="190"><label for="p_price"></label>
          <input name="p_price" type="number" required id="p_price" value="<?php echo $row_eprd['p_price']; ?>"/></td>
