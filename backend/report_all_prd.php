@@ -167,8 +167,8 @@ $totalRows_prd = mysql_num_rows($prd);
                           <?php echo $row_prd['p_view'];?></font>
                         </td>
                         <td align="right" valign="top">
-                          <font color="<?php echo $c; ?>">
-                            <?php echo number_format($row_prd['p_price'],2); ?></font></td>
+                         
+                            <?php echo number_format($row_prd['p_price'],2); ?></td>
                           </tr>
                           <?php
                           $i += 1;
@@ -183,7 +183,7 @@ $totalRows_prd = mysql_num_rows($prd);
                         <th></th>
                         <th></th>
                         <th></th>
-                        <th style="text-align:right">Total:</th>
+                        <th style="text-align:right">ราคารวม:</th>
                         <th></th>
                       </tr>
                     </tfoot>

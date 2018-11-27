@@ -31,7 +31,7 @@ function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
   return $isValid; 
 }
 
-$MM_restrictGoTo = "../login_admin.php";
+$MM_restrictGoTo = "../logout_admin.php";
 if (!((isset($_SESSION['MM_admin'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_admin'], $_SESSION['MM_UserGroup'])))) {   
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];

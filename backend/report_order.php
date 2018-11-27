@@ -36,6 +36,7 @@
   <div class="container">
     <div class="row">
      <?php include('banner.php');?>
+     <?php include 'date.php'; ?>
    </div>
    <div class="row">
      <div class="col-md-2">
@@ -58,13 +59,13 @@
         <label><font size="2">จากวันที่</font></label> 
        </div>
       <div class="col-md-4">
-      <input type="text" name="start_date" id="start_date" class="form-control" />
+      <input type="text" name="start_date"  id="inputdatepicker" class="datepicker" autocomplete="off" />
       </div>
        <div class="col-md-1">
         <label><font size="2">ถึงวันที่</font></label>  
        </div>
       <div class="col-md-4">
-     <input type="text"  name="end_date" id="end_date" class="form-control" />
+     <input type="text"  name="end_date"  id="inputdatepicker" class="datepicker"  autocomplete="off" />
       </div>      
      </div>
      <div class="col-md-2">
