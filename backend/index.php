@@ -80,4 +80,4 @@ include('access.php');?>
 </div>
 </body>
 </html>
-<?php include('f.php');?>
+<?php // include('f.php');?>

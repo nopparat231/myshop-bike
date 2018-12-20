@@ -1,23 +1,26 @@
 
 <style>
 .bg-4 { 
-    width: 100%;
-    height: 20%;
-    background-color: #778899;
-    color: #ffffff;
+	width: 100%;
+	height: 20%;
+	background-color: #778899;
+	color: #ffffff;
 }
 </style>
 <br>
 <br><br>
 <footer class="container-fluid bg-4 text-center " id="hp">
-  <br />
-  <p>@My Web </p> 
-  <a class="btn btn-primary" href="register.php" ">สมัครสมาชิก </a>||<a href="login.php" class="btn btn-primary">  เข้าสู่ระบบ</a><br />
- <br />
+	<br />
+	<p>@ร้านขายจักรยาน </p> 
+	<a class="btn btn-primary" href="register.php" ">สมัครสมาชิก </a>||<a href="login.php" class="btn btn-primary">  เข้าสู่ระบบ</a><br />
+	
+	<h4>
+		
+		<div class="pull-right">
+			<a href="./admin">ผู้ดูแลระบบ</a></div>
+		</h4>
+	</footer>
 
-</footer>
+	<!-- Footer -->
+	<script src="js/bootstrap.min.js"></script>
 
-  <!-- Footer -->
-    <script src="js/bootstrap.min.js"></script>
-    
-    

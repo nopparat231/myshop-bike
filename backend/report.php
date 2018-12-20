@@ -44,7 +44,7 @@ include 'report_db.php';
       <div class="icon">
         <i class="ion ion-stats-bars"></i>
       </div>
-      <a href="report_all_prd.php" class="small-box-footer">
+      <a href="report_all_prd.php?all=all" class="small-box-footer">
         ดูเพิ่มเติม <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
@@ -78,7 +78,7 @@ include 'report_db.php';
       <div class="icon">
         <i class="ion ion-pie-graph"></i>
       </div>
-      <a href="report_all_prd.php" class="small-box-footer">
+      <a href="report_all_prd.php?all=all" class="small-box-footer">
         ดูเพิ่มเติม <i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>

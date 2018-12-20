@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2018 at 03:56 PM
+-- Generation Time: Dec 20, 2018 at 04:39 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -130,6 +130,7 @@ CREATE TABLE `tbl_order` (
   `b_name` varchar(100) DEFAULT NULL,
   `b_number` varchar(200) DEFAULT NULL,
   `pay_date` date DEFAULT NULL,
+  `pay_fa` float(10,2) NOT NULL,
   `pay_amount` float(10,2) DEFAULT NULL,
   `postcode` varchar(30) DEFAULT NULL,
   `order_date` date NOT NULL
@@ -139,11 +140,10 @@ CREATE TABLE `tbl_order` (
 -- Dumping data for table `tbl_order`
 --
 
-INSERT INTO `tbl_order` (`order_id`, `mem_id`, `name`, `address`, `email`, `phone`, `order_status`, `pay_slip`, `b_name`, `b_number`, `pay_date`, `pay_amount`, `postcode`, `order_date`) VALUES
-(0000000003, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 4, '44421295020181106_231732.jpg', 'กสิกรไทย', '435-545-65454-545', '2018-11-06', 19189.38, '', '2018-11-06'),
-(0000000004, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 2, '134863616320181107_001904.jpg', 'ไทยพาณิชย์', '235-545-66684-845', '2018-11-07', 47032.92, '', '2018-11-07'),
-(0000000005, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 5, '', '', '', '0000-00-00', 0.00, '', '2018-11-07'),
-(0000000006, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 3, '34585961720181109_235600.jpg', 'ไทยพาณิชย์', '235-545-66684-845', '2018-11-09', 160602.72, 'TH1235455556', '2018-11-09');
+INSERT INTO `tbl_order` (`order_id`, `mem_id`, `name`, `address`, `email`, `phone`, `order_status`, `pay_slip`, `b_name`, `b_number`, `pay_date`, `pay_fa`, `pay_amount`, `postcode`, `order_date`) VALUES
+(0000000003, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 4, '44421295020181106_231732.jpg', 'กสิกรไทย', '435-545-65454-545', '2018-11-06', 10000.00, 19189.38, '', '2018-11-06'),
+(0000000004, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 2, '134863616320181107_001904.jpg', 'ไทยพาณิชย์', '235-545-66684-845', '2018-11-07', 3000.00, 47032.92, '', '2018-11-07'),
+(0000000006, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 3, '34585961720181109_235600.jpg', 'ไทยพาณิชย์', '235-545-66684-845', '2018-11-09', 60602.72, 160602.72, 'TH1235455556', '2018-11-09');
 
 -- --------------------------------------------------------
 
@@ -202,7 +202,7 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`p_id`, `t_id`, `p_name`, `p_size`, `p_detial`, `p_price_a`, `p_price`, `p_unit`, `p_img1`, `p_img2`, `p_view`, `p_qty`, `p_ems`, `date_save`) VALUES
-(26, 15, '2015 MERIDA BIG 9 - 500D', '15', '<p><strong>2015 Merida BIG NINE - 500</strong></p>\r\n\r\n<p>&nbsp;<strong>FRAME</strong>&nbsp;: Aluminum Big Seven TFS</p>\r\n\r\n<p>&nbsp;<strong>FORK</strong>&nbsp;: Rock Shox (เป็นโช็คแอร์)</p>\r\n\r\n<p>&nbsp;- Shimano Deore/SLX 30 Sp</p>\r\n\r\n<p>&nbsp;- ขนาดล้อ 29 นิ้ว</p>\r\n', 22000.00, 21900.00, 'คัน', 'img132868451620180823_231954.jpg', '', 10, 0, 78, '2018-08-23 16:19:54'),
+(26, 15, '2015 MERIDA BIG 9 - 500D', '15', '<p><strong>2015 Merida BIG NINE - 500</strong></p>\r\n\r\n<p>&nbsp;<strong>FRAME</strong>&nbsp;: Aluminum Big Seven TFS</p>\r\n\r\n<p>&nbsp;<strong>FORK</strong>&nbsp;: Rock Shox (เป็นโช็คแอร์)</p>\r\n\r\n<p>&nbsp;- Shimano Deore/SLX 30 Sp</p>\r\n\r\n<p>&nbsp;- ขนาดล้อ 29 นิ้ว</p>\r\n', 22000.00, 21900.00, 'คัน', 'img132868451620180823_231954.jpg', '', 11, 0, 78, '2018-08-23 16:19:54'),
 (27, 15, '2018 TREK MARLIN 6', '18', '<p>TREK MARLIN6 -Orange- 2018</p>\r\n\r\n<p>- 24 สปีดส์</p>\r\n\r\n<p>- ดิสก์น้ำมัน</p>\r\n\r\n<p>- ไซส์ 13.5 , 15.5 (ล้อขนาด 27.5)</p>\r\n\r\n<p>- ไซส์ 18.5, 19.5, 21.5 (ล้อขนาด 27.5)</p>\r\n\r\n<p>_Ride the fastest wheel that fits with Smart Wheel Size<br />\r\n_Ride-tuned aluminum frame is XC light, mountain tough<br />\r\n_Extended size range gives you a better fit for a better ride<br />\r\n_Backed by Trek&#39;s limited lifetime warranty</p>\r\n\r\n<p>_Smart Wheel Size ให้ประสิทธิภาพการปั่นของคุณยอดเยี่ยมถึงขีดสุดได้ในทุกๆขนาดเฟรม ให้คุณไปได้เร็วกว่าในเส้นทางราบ และไต่เขาได้อย่างยอดเยี่ยมในเส้นทางเทรล<br />\r\n_เฟรมอลูมินั่มจากเทรค นอกเหนือจากเทคโนโลยีการผลิตจะยอดเยี่ยม สร้างเฟรมที่มีน้ำหนักเบา แข็งแรงทนทานแล้ว Ride-Tuned Frame ยังมีการออกแบบองศาเฟรมแต่ละขนาดอย่างเหมาะสม คงไว้ซึ่งประสิทธิภาพการปั่น<br />\r\n_ขนาดของเฟรมที่กว้างครอบคลุมตั้งแต่ 13.5&quot; ถึง 23&quot; ให้คุณสามารถเลือกใช้งานเฟรมขนาดที่เหมาะสมสำหรับคุณมากที่สุด เพื่อให้ได้ประสิทธิภาพการใช้งานที่ดีที่สุด</p>\r\n\r\n<p>&nbsp;</p>\r\n', 12000.00, 13400.00, 'คัน', 'img164019166420180823_232216.jpg', 'img264019166420180823_232216.jpg', 11, 2, 30, '2018-08-23 16:22:16'),
 (28, 16, '2015 RIDLEY FENIX (CARBON)', '19', '<p>RIDLEY FENIX (Carbon) - 2015<br />\r\n<br />\r\nFRAME FENIX C : 24T HM UNIDIRECTIONAL CARBON<br />\r\nFORK FENIX C : 24T HM UDV CARBON / ALLOY STEERER<br />\r\nDRIVETRAIN : SHIMANO 105 11 SPEED (Mix)<br />\r\nWHEELSET : FULCRUM RACING SPORT</p>\r\n', 22000.00, 44000.00, 'คัน', 'img123966966620180823_232354.jpg', '', 1, 7, 54, '2018-08-23 16:23:54'),
 (29, 17, 'SURLY LONG HAUL TRUCKER', '15', '<p>จักรยานทัวร์ริ่งรุ่นยอดนิยม เหมาะสำหรับการขี่ท่องเที่ยวระยะไกล&nbsp;<br />\r\nมีคุณสมบัติแข็งแรง ทนทานและมีความนุ่มนวลเพียงพอกับการขนสัมภาระหนักๆ&nbsp;<br />\r\nด้วยคุณสมบัติจักรยานทัวร์ริ่งแท้โดยมีหูยึดตะแกรงที่หางหลังและที่ตะเกียบหน้า<br />\r\nสามารถใช้เบรคผีเสือได้เพื่อจะได้ไม่เกะกะจุดยึดตะแกรงและบังโคลน</p>\r\n', 22000.00, 39000.00, 'คัน', 'img139683125820180823_232521.jpg', '', 0, 5, 46, '2018-08-23 16:25:21'),

@@ -1,9 +1,9 @@
 <?php 
 $condb = mysqli_connect("localhost", "root", "", "bike-shop");
-$columns = array('order_id', 'name', 'order_status' , 'order_date', 'pay_amount');
+$columns = array('order_id', 'name', 'order_status' , 'order_date', 'p_price_a', 'pay_amount');
 //$columns = array('order_id', 'name', 'address', 'pay_amount', 'order_date');
 
-$query = "SELECT * FROM tbl_order WHERE ";
+$query = "SELECT * FROM tbl_order , tbl_product WHERE ";
 
 if($_POST["is_date_search"] == "yes")
 {
@@ -17,9 +17,10 @@ if(isset($_POST["search"]["value"]))
 	OR name LIKE "%'.$_POST["search"]["value"].'%" 
 
 	OR order_status LIKE "%'.$_POST["search"]["value"].'%" 
-	OR order_date LIKE "%'.$_POST["search"]["value"].'%" 
-	OR pay_amount LIKE "%'.$_POST["search"]["value"].'%")
-	';
+	OR order_date LIKE "%'.$_POST["search"]["value"].'%"
+	OR p_price_a LIKE "%'.$_POST["search"]["value"].'%" 
+	
+	OR pay_amount LIKE "%'.$_POST["search"]["value"].'%")';
 }
 
 if(isset($_POST["order"]))
@@ -75,7 +76,9 @@ while($row = mysqli_fetch_array($result))
 	$sub_array[] = $status;
 	
 	$sub_array[] = $row["order_date"];
+	$sub_array[] = number_format($row["p_price_a"],2);
 	$sub_array[] = number_format($row["pay_amount"],2);
+	$sub_array[] = number_format($row["p_price_a"]-$row["pay_amount"],2);
 	$data[] = $sub_array;
 	$i +=1;
 }
