@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2018 at 04:39 PM
+-- Generation Time: Jan 06, 2019 at 11:01 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -119,7 +119,7 @@ CREATE TABLE `tbl_new` (
 --
 
 CREATE TABLE `tbl_order` (
-  `order_id` int(10) UNSIGNED ZEROFILL NOT NULL,
+  `order_id` int(6) UNSIGNED ZEROFILL NOT NULL,
   `mem_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `address` varchar(500) NOT NULL,
@@ -141,9 +141,10 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`order_id`, `mem_id`, `name`, `address`, `email`, `phone`, `order_status`, `pay_slip`, `b_name`, `b_number`, `pay_date`, `pay_fa`, `pay_amount`, `postcode`, `order_date`) VALUES
-(0000000003, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 4, '44421295020181106_231732.jpg', 'กสิกรไทย', '435-545-65454-545', '2018-11-06', 10000.00, 19189.38, '', '2018-11-06'),
-(0000000004, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 2, '134863616320181107_001904.jpg', 'ไทยพาณิชย์', '235-545-66684-845', '2018-11-07', 3000.00, 47032.92, '', '2018-11-07'),
-(0000000006, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 3, '34585961720181109_235600.jpg', 'ไทยพาณิชย์', '235-545-66684-845', '2018-11-09', 60602.72, 160602.72, 'TH1235455556', '2018-11-09');
+(000003, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 4, '44421295020181106_231732.jpg', 'กสิกรไทย', '435-545-65454-545', '2018-11-06', 10000.00, 19189.38, '', '2018-11-06'),
+(000004, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 2, '134863616320181107_001904.jpg', 'ไทยพาณิชย์', '235-545-66684-845', '2018-11-07', 3000.00, 47032.92, '', '2018-11-07'),
+(000006, 7, 'dddd', 'dddd', '23.noop@gmail.com', '0902020202', 3, '34585961720181109_235600.jpg', 'ไทยพาณิชย์', '235-545-66684-845', '2018-11-09', 60602.72, 160602.72, 'TH1235455556', '2018-11-09'),
+(000016, 9, 'aaaa', 'bbbb', '23.noop@gmail.com', '2121212121', 1, '', '', '', '0000-00-00', 44000.00, 0.00, '', '2019-01-06');
 
 -- --------------------------------------------------------
 
@@ -172,7 +173,18 @@ INSERT INTO `tbl_order_detail` (`d_id`, `order_id`, `p_id`, `p_name`, `p_c_qty`,
 (5, 4, 26, '2015 MERIDA BIG 9 - 500D', 2, '47032.92'),
 (6, 5, 32, 'MERIDA JULIET7-100 (2017)', 1, '19189.38'),
 (7, 6, 32, 'MERIDA JULIET7-100 (2017)', 1, '19189.38'),
-(8, 6, 28, '2015 RIDLEY FENIX (CARBON)', 3, '141413.34');
+(8, 6, 28, '2015 RIDLEY FENIX (CARBON)', 3, '141413.34'),
+(9, 7, 32, 'MERIDA JULIET7-100 (2017)', 1, '19189.38'),
+(10, 8, 32, 'MERIDA JULIET7-100 (2017)', 1, '19189.38'),
+(11, 8, 31, 'LAMBORGHINI 20\" CONCETTO', 1, '23604.2'),
+(12, 9, 30, 'BMC ALPENCHALLENGE AC02', 1, '15012.1'),
+(13, 10, 31, 'LAMBORGHINI 20\" CONCETTO', 1, '23604.2'),
+(14, 11, 32, 'MERIDA JULIET7-100 (2017)', 1, '19189.38'),
+(15, 12, 32, 'MERIDA JULIET7-100 (2017)', 1, '19189.38'),
+(16, 13, 31, 'LAMBORGHINI 20\" CONCETTO', 1, '23604.2'),
+(17, 14, 29, 'SURLY LONG HAUL TRUCKER', 1, '41779.22'),
+(18, 15, 28, '2015 RIDLEY FENIX (CARBON)', 1, '47137.78'),
+(19, 16, 28, '2015 RIDLEY FENIX (CARBON)', 2, '94275.56');
 
 -- --------------------------------------------------------
 
@@ -202,14 +214,14 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`p_id`, `t_id`, `p_name`, `p_size`, `p_detial`, `p_price_a`, `p_price`, `p_unit`, `p_img1`, `p_img2`, `p_view`, `p_qty`, `p_ems`, `date_save`) VALUES
-(26, 15, '2015 MERIDA BIG 9 - 500D', '15', '<p><strong>2015 Merida BIG NINE - 500</strong></p>\r\n\r\n<p>&nbsp;<strong>FRAME</strong>&nbsp;: Aluminum Big Seven TFS</p>\r\n\r\n<p>&nbsp;<strong>FORK</strong>&nbsp;: Rock Shox (เป็นโช็คแอร์)</p>\r\n\r\n<p>&nbsp;- Shimano Deore/SLX 30 Sp</p>\r\n\r\n<p>&nbsp;- ขนาดล้อ 29 นิ้ว</p>\r\n', 22000.00, 21900.00, 'คัน', 'img132868451620180823_231954.jpg', '', 11, 0, 78, '2018-08-23 16:19:54'),
+(26, 15, '2015 MERIDA BIG 9 - 500D', '15', '<p><strong>2015 Merida BIG NINE - 500</strong></p>\r\n\r\n<p>&nbsp;<strong>FRAME</strong>&nbsp;: Aluminum Big Seven TFS</p>\r\n\r\n<p>&nbsp;<strong>FORK</strong>&nbsp;: Rock Shox (เป็นโช็คแอร์)</p>\r\n\r\n<p>&nbsp;- Shimano Deore/SLX 30 Sp</p>\r\n\r\n<p>&nbsp;- ขนาดล้อ 29 นิ้ว</p>\r\n', 2000.00, 21900.00, 'คัน', 'img132868451620180823_231954.jpg', '', 11, 0, 78, '2018-08-23 16:19:54'),
 (27, 15, '2018 TREK MARLIN 6', '18', '<p>TREK MARLIN6 -Orange- 2018</p>\r\n\r\n<p>- 24 สปีดส์</p>\r\n\r\n<p>- ดิสก์น้ำมัน</p>\r\n\r\n<p>- ไซส์ 13.5 , 15.5 (ล้อขนาด 27.5)</p>\r\n\r\n<p>- ไซส์ 18.5, 19.5, 21.5 (ล้อขนาด 27.5)</p>\r\n\r\n<p>_Ride the fastest wheel that fits with Smart Wheel Size<br />\r\n_Ride-tuned aluminum frame is XC light, mountain tough<br />\r\n_Extended size range gives you a better fit for a better ride<br />\r\n_Backed by Trek&#39;s limited lifetime warranty</p>\r\n\r\n<p>_Smart Wheel Size ให้ประสิทธิภาพการปั่นของคุณยอดเยี่ยมถึงขีดสุดได้ในทุกๆขนาดเฟรม ให้คุณไปได้เร็วกว่าในเส้นทางราบ และไต่เขาได้อย่างยอดเยี่ยมในเส้นทางเทรล<br />\r\n_เฟรมอลูมินั่มจากเทรค นอกเหนือจากเทคโนโลยีการผลิตจะยอดเยี่ยม สร้างเฟรมที่มีน้ำหนักเบา แข็งแรงทนทานแล้ว Ride-Tuned Frame ยังมีการออกแบบองศาเฟรมแต่ละขนาดอย่างเหมาะสม คงไว้ซึ่งประสิทธิภาพการปั่น<br />\r\n_ขนาดของเฟรมที่กว้างครอบคลุมตั้งแต่ 13.5&quot; ถึง 23&quot; ให้คุณสามารถเลือกใช้งานเฟรมขนาดที่เหมาะสมสำหรับคุณมากที่สุด เพื่อให้ได้ประสิทธิภาพการใช้งานที่ดีที่สุด</p>\r\n\r\n<p>&nbsp;</p>\r\n', 12000.00, 13400.00, 'คัน', 'img164019166420180823_232216.jpg', 'img264019166420180823_232216.jpg', 11, 2, 30, '2018-08-23 16:22:16'),
-(28, 16, '2015 RIDLEY FENIX (CARBON)', '19', '<p>RIDLEY FENIX (Carbon) - 2015<br />\r\n<br />\r\nFRAME FENIX C : 24T HM UNIDIRECTIONAL CARBON<br />\r\nFORK FENIX C : 24T HM UDV CARBON / ALLOY STEERER<br />\r\nDRIVETRAIN : SHIMANO 105 11 SPEED (Mix)<br />\r\nWHEELSET : FULCRUM RACING SPORT</p>\r\n', 22000.00, 44000.00, 'คัน', 'img123966966620180823_232354.jpg', '', 1, 7, 54, '2018-08-23 16:23:54'),
-(29, 17, 'SURLY LONG HAUL TRUCKER', '15', '<p>จักรยานทัวร์ริ่งรุ่นยอดนิยม เหมาะสำหรับการขี่ท่องเที่ยวระยะไกล&nbsp;<br />\r\nมีคุณสมบัติแข็งแรง ทนทานและมีความนุ่มนวลเพียงพอกับการขนสัมภาระหนักๆ&nbsp;<br />\r\nด้วยคุณสมบัติจักรยานทัวร์ริ่งแท้โดยมีหูยึดตะแกรงที่หางหลังและที่ตะเกียบหน้า<br />\r\nสามารถใช้เบรคผีเสือได้เพื่อจะได้ไม่เกะกะจุดยึดตะแกรงและบังโคลน</p>\r\n', 22000.00, 39000.00, 'คัน', 'img139683125820180823_232521.jpg', '', 0, 5, 46, '2018-08-23 16:25:21'),
+(28, 16, '2015 RIDLEY FENIX (CARBON)', '19', '<p>RIDLEY FENIX (Carbon) - 2015<br />\r\n<br />\r\nFRAME FENIX C : 24T HM UNIDIRECTIONAL CARBON<br />\r\nFORK FENIX C : 24T HM UDV CARBON / ALLOY STEERER<br />\r\nDRIVETRAIN : SHIMANO 105 11 SPEED (Mix)<br />\r\nWHEELSET : FULCRUM RACING SPORT</p>\r\n', 22000.00, 44000.00, 'คัน', 'img123966966620180823_232354.jpg', '', 1, 4, 54, '2018-08-23 16:23:54'),
+(29, 17, 'SURLY LONG HAUL TRUCKER', '15', '<p>จักรยานทัวร์ริ่งรุ่นยอดนิยม เหมาะสำหรับการขี่ท่องเที่ยวระยะไกล&nbsp;<br />\r\nมีคุณสมบัติแข็งแรง ทนทานและมีความนุ่มนวลเพียงพอกับการขนสัมภาระหนักๆ&nbsp;<br />\r\nด้วยคุณสมบัติจักรยานทัวร์ริ่งแท้โดยมีหูยึดตะแกรงที่หางหลังและที่ตะเกียบหน้า<br />\r\nสามารถใช้เบรคผีเสือได้เพื่อจะได้ไม่เกะกะจุดยึดตะแกรงและบังโคลน</p>\r\n', 22000.00, 39000.00, 'คัน', 'img139683125820180823_232521.jpg', '', 0, 4, 46, '2018-08-23 16:25:21'),
 (25, 15, 'BIANCHI JAB 27.3 (2017)', '17', '<p>เฟรมอลูมิเนียม Superlight ซ่อนสายลบรอยเชื่อม ขนาดล้อ 27.5 นิ้ว มากับเกียร์ Shimano XT/Deore แบบ 2x10 สปีด เบรคไฮดรอลิค ชุดจานหน้า แบบกระโหลกกลวง Hollowtech Octalink ของ Shimano พร้อมโช๊ค Rockshox มี Remote lockout</p>\r\n\r\n<p>มีมาให้เลือก 2&nbsp;สี คือ สีเขียวซีเลสเต้ (ด้าน), สีดำด้านคาดเขียว</p>\r\n\r\n<p>Model : JAB 27.3 XT/Deore 2x10 speed</p>\r\n\r\n<p>Frame : Alu 6061, Fork : Rock Shox 30 Silver Headset : FSA Orbit 1.5B ZS-1 Shifters : Shimano Deore 2x10 sp Rear derailleur : Shimano XT RD-M781 Shadow Design 10 sp Front derailleur : Shimano Deore FD-M610-B Crankset : Shimano FC-M523 38/24T Hollowtech Octalink, BB : Shimano BB-ES300 Chain : KMC X10 EPT&nbsp;<br />\r\nSprocket : Shimano Deore HG50-10sp, 11-13-15-17-19-21-24-28-32-36T Brakes : Shimano M396 Wheels : WTB XC21 TCS</p>\r\n\r\n<p>&nbsp;</p>\r\n', 22000.00, 32300.00, 'คัน', 'img188859081820180823_225652.jpg', 'img288859081820180823_225652.jpg', 5, 0, 30, '2018-08-23 15:56:52'),
-(30, 18, 'BMC ALPENCHALLENGE AC02', '20', '<p><strong>Frame :</strong>&nbsp;Alpha Gold Aluminum</p>\r\n\r\n<p><strong>Front Susp. :</strong>&nbsp;SR Suntour , Coil Spring , 63mm. travel</p>\r\n\r\n<p><strong>Drivetrain :</strong>&nbsp;Shimano Acera 3*8 SP. Compact</p>\r\n\r\n<p><strong>Wheel&#39;s size :</strong>&nbsp;700c</p>\r\n', 12000.00, 14000.00, 'คัน', 'img1178139422120180823_232808.jpg', '', 2, 62, 30, '2018-08-23 16:27:33'),
-(31, 19, 'LAMBORGHINI 20\" CONCETTO', '18', '<p>รถพับรูปลักษณ์แปลกตาสวยงาม ลิขสิทธิ์แท้จาก Tonino Lamborghini</p>\r\n\r\n<p><strong>Frame</strong>&nbsp;:Alloy</p>\r\n\r\n<p><strong>Brakes</strong>&nbsp;:Tektro R320</p>\r\n\r\n<p><strong>Wheel Size</strong>:20 inch wheels 451</p>\r\n\r\n<p><strong>Speeds</strong>:18</p>\r\n\r\n<p><strong>Weight</strong>:11.4 kg</p>\r\n\r\n<p><strong>Color</strong>&nbsp;: Gross black</p>\r\n', 22000.00, 20000.00, 'คัน', 'img112614947020180823_232934.jpg', '', 0, 18, 60, '2018-08-23 16:29:34'),
-(32, 21, 'MERIDA JULIET7-100 (2017)', '15', '<p><br />\r\n- Frame JULIET TFS<br />\r\n- Fork Suntour SR 27 XCM HLO 100<br />\r\n- ชุดขับ Shimano Alivio/Altus 27 Speed</p>\r\n', 12000.00, 17900.00, 'คัน', 'img182381907120180823_233044.jpg', '', 1, 16, 34, '2018-08-23 16:30:44');
+(30, 18, 'BMC ALPENCHALLENGE AC02', '20', '<p><strong>Frame :</strong>&nbsp;Alpha Gold Aluminum</p>\r\n\r\n<p><strong>Front Susp. :</strong>&nbsp;SR Suntour , Coil Spring , 63mm. travel</p>\r\n\r\n<p><strong>Drivetrain :</strong>&nbsp;Shimano Acera 3*8 SP. Compact</p>\r\n\r\n<p><strong>Wheel&#39;s size :</strong>&nbsp;700c</p>\r\n', 12000.00, 14000.00, 'คัน', 'img1178139422120180823_232808.jpg', '', 2, 61, 30, '2018-08-23 16:27:33'),
+(31, 19, 'LAMBORGHINI 20\" CONCETTO', '18', '<p>รถพับรูปลักษณ์แปลกตาสวยงาม ลิขสิทธิ์แท้จาก Tonino Lamborghini</p>\r\n\r\n<p><strong>Frame</strong>&nbsp;:Alloy</p>\r\n\r\n<p><strong>Brakes</strong>&nbsp;:Tektro R320</p>\r\n\r\n<p><strong>Wheel Size</strong>:20 inch wheels 451</p>\r\n\r\n<p><strong>Speeds</strong>:18</p>\r\n\r\n<p><strong>Weight</strong>:11.4 kg</p>\r\n\r\n<p><strong>Color</strong>&nbsp;: Gross black</p>\r\n', 2000.00, 22000.00, 'คัน', 'img112614947020180823_232934.jpg', '', 0, 15, 60, '2018-08-23 16:29:34'),
+(32, 21, 'MERIDA JULIET7-100 (2017)', '15', '<p><br />\r\n- Frame JULIET TFS<br />\r\n- Fork Suntour SR 27 XCM HLO 100<br />\r\n- ชุดขับ Shimano Alivio/Altus 27 Speed</p>\r\n', 12000.00, 17900.00, 'คัน', 'img182381907120180823_233044.jpg', '', 1, 12, 34, '2018-08-23 16:30:44');
 
 -- --------------------------------------------------------
 
@@ -307,13 +319,13 @@ ALTER TABLE `tbl_member`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `order_id` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `order_id` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_detail`
 --
 ALTER TABLE `tbl_order_detail`
-  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`

@@ -60,7 +60,7 @@ $q = $p_qty;
 
         <?php
         $total=0;
-
+        $fa = 0;
 
         if(!empty($_SESSION['shopping_cart']))
         {
@@ -71,7 +71,14 @@ $q = $p_qty;
                 $query = mysql_query($sql, $condb );
                 $row = mysql_fetch_array($query);
                 $sum = $row['p_price'] * $p_qty;
+
                 $total += $sum;
+
+
+                $pay_faa = $row['p_price_a'] * $p_qty;
+
+                $pay_fa += $pay_faa;
+                
 
                 $ems = $row['p_ems'] * $p_qty;
                 $total += $ems;
@@ -86,12 +93,12 @@ $q = $p_qty;
 
 
                 echo "<td width='15%' align='center'>"; 
-?>
+                ?>
 
 
 
-                <input type='text' style="text-align: center;" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
-<?php
+                <input type='text' style="text-align: center;" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>
+                <?php
 
                 echo "<td width='10%' align='center'>".number_format($ems). "</td>";
                 //echo "<input type='number' name='amount[$p_id]' value='$p_qty' size='2'/></td>";
@@ -102,13 +109,16 @@ $q = $p_qty;
 
 
             }
-
+          
+            ?>
+            <input type='text' hidden="hidden"  name="pay_fa" value="<?php echo $pay_fa; ?>";
+            <?php
             echo "<tr>";
             echo "<td  align='left' colspan='6'><b>จำนวนสิน้าในรถเข็น</b></td>";
             echo "<td align='center'>"."<b>".number_format($sumqyt)."</b>"."</td>";
-          
+
             
-             echo "</tr>";
+            echo "</tr>";
 
             echo "<tr>";
             echo "<td  align='left' colspan='6'><b>ราคาสินค้ารวม</b></td>";
@@ -142,9 +152,9 @@ $q = $p_qty;
         if ($p_qty > $row["p_qty"]) {
 // echo $p_qty;
 // echo $row["p_qty"];
-           ?>
-           <script>alert('รายการสินค้า "<?php echo $row["p_name"] ?>" มีสินค้าเพียง "<?php echo $row["p_qty"] ?>" ชิ้น!'); </script>
-           <tr >
+         ?>
+         <script>alert('รายการสินค้า "<?php echo $row["p_name"] ?>" มีสินค้าเพียง "<?php echo $row["p_qty"] ?>" ชิ้น!'); </script>
+         <tr >
 
             <td colspan="6" >
                 <input type="button" name="Submit2" value="< กลับหน้าหลัก" class="btn btn-info pull-left" onclick="window.location='index.php';" />

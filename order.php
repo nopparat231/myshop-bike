@@ -74,7 +74,7 @@ if($_SESSION['MM_Username']!=''){
 
         if ($totalRows_buyer > 0) {
 
-      
+
           foreach($_SESSION['shopping_cart'] as $p_id=>$p_qty)
           {
             $sql = "select * from tbl_product where p_id=$p_id";
@@ -83,7 +83,9 @@ if($_SESSION['MM_Username']!=''){
             $sum	= $row['p_price']*$p_qty;
 
             $total	+= $sum;
+            $pay_faa = $row['p_price_a'] * $p_qty;
 
+            $pay_fa += $pay_faa;
 
             $ems = $row['p_ems'] * $p_qty;
             $total += $ems;
@@ -114,7 +116,9 @@ if($_SESSION['MM_Username']!=''){
           $tax = $total*0.07;
           $total += $tax;
 
-
+          ?>
+          <input type='text' hidden="hidden" name="pay_fa" value="<?php echo $pay_fa; ?>";
+          <?php
           echo "<tr class='success'>";
           echo "<td  align='left' colspan='6'><b>จัดส่ง</b></td>";
           echo "<td align='center'>"."<b>".number_format($sumems)."</b>"."</td>";
@@ -170,12 +174,12 @@ if($_SESSION['MM_Username']!=''){
             <input name="mem_id" type="hidden" id="mem_id" value="<?php echo $row_buyer['mem_id']; ?>">
 
             
-<a href="confirm_order.php?p_id=$p_id&oct=after" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
+            <a href="confirm_order.php?p_id=$p_id&oct=after" type="submit" class="btn btn-warning" >แก้ไขสินค้า</a>
             
             <button type="submit" class="btn btn-success" id="btn">
             ยืนยันสั่งซื้อ </button>
 
-<a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
+            <a href="crear_shoping.php" type="submit" class="btn btn-danger" >ยกเลิกการสั่งซื้อ</a>
             
           </div>
         </div>

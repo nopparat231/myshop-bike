@@ -147,7 +147,7 @@ $totalRows_mycart = mysql_num_rows($mycart);
           <tr>
             <td align="center" valign="top"><?php echo $i; ?></td>
             <td align="center">
-              <?php echo $row_mycart['oid'];?>
+              PR<?php echo $row_mycart['oid'];?>
             </td>
             <td align="center" >
               <?php echo $row_mycart['name'];?>
