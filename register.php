@@ -54,12 +54,8 @@
           </div>
         </div>
 
-        <div class="form-group">
-        <div class="col-sm-2" align="right"> ที่อยู่ : </div>
-          <div class="col-sm-5" align="left">
-            <textarea name="mem_address" type="textarea" required class="form-control" id="mem_address" placeholder="ที่อยู่" ></textarea> 
-          </div>
-        </div>
+        <!-- ที่อยู่ -->
+      <?php include 'from_add.php'; ?>
 
         <div class="form-group">
         <div class="col-sm-2" align="right"> เบอร์โทร : </div>

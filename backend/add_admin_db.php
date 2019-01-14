@@ -8,7 +8,7 @@ $admin_user = $_POST['admin_user'];
 $admin_pass = $_POST['admin_pass'];
 $admin_name = $_POST['admin_name'];
 $admin_tel = $_POST['admin_tel'];
-$admin_address = $_POST['admin_address'];
+$admin_address = $_POST['a']." ตำบล ".$_POST['t']." อำเภอ ".$_POST['o']." จังหวัด ".$_POST['j']." รหัสไปรษณีย์ ".$_POST['p'];
 $admin_email = $_POST['admin_email'];
 $admin_status = $_POST['admin_status'];
 
@@ -28,7 +28,7 @@ if($num > 0)
 
 
 $sql ="INSERT INTO tbl_admin
-		(admin_user,  admin_pass, admin_name ,admin_status ,admin_tel ,admin_address ,admin_email)
+		(admin_user,  admin_pass, admin_name ,status ,admin_tel ,admin_address ,admin_email)
 
 		VALUES
 

@@ -87,7 +87,7 @@ $totalRows_editadmin = mysql_num_rows($editadmin);
       </div>
       <div class="form-group">
         <div class="col-sm-2" align="right"> ชื่อ-สกุล : </div>
-        <div class="col-sm-7" align="left">
+        <div class="col-sm-5" align="left">
           <input  name="admin_name" type="text" required class="form-control" id="admin_name" placeholder="ชื่อ-สกุล" value="<?php echo $row_editadmin['admin_name']; ?>" />
         </div>
       </div>

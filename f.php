@@ -2,7 +2,7 @@
 <style>
 .bg-4 { 
 	width: 100%;
-	height: 20%;
+	height: 10%;
 	background-color: #778899;
 	color: #ffffff;
 }
@@ -12,7 +12,7 @@
 <footer class="container-fluid bg-4 text-center " id="hp">
 	<br />
 	<p>@ร้านขายจักรยาน </p> 
-	<a class="btn btn-primary" href="register.php" ">สมัครสมาชิก </a>||<a href="login.php" class="btn btn-primary">  เข้าสู่ระบบ</a><br />
+	
 	
 	<h4>
 		
