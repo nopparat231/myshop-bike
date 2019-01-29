@@ -63,7 +63,7 @@ include 'check_order_date.php';
       <div class="col-md-7">
         <div class="panel panel-info">
           <div class="panel-heading"> รายการสินค้า
-            <a href="index.php" class="btn btn-info btn-xs"> <?php echo $_GET['type_name']; ?> </a>
+            <a href="index.php" class="btn btn-info btn-xs"> แนะนำ </a>
           </div>
         </div>
 

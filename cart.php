@@ -74,7 +74,7 @@ if($act == 'update')
 
                 ?>
                 
-                <input type='text' style="text-align: center;" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
+                <input type='text' style="text-align: center;" id="input-num" value="<?php echo $p_qty; ?>" onkeyup="if(this.value > <?php echo $row['p_qty']; ?>) this.value = <?php echo $row['p_qty']; ?>;num();" size='1' name='amount[<?php echo $p_id ?>]' /></td>"
                 <?php
 
                 echo "<td width='20%' align='right'>".number_format($sum). "&nbsp<a href='index.php?p_id=$p_id&act=remove' ><span class='glyphicon glyphicon-remove' style='color: red' ></span></a></td>";
@@ -83,7 +83,7 @@ if($act == 'update')
             }
             echo "<tr class='success'>";
             echo "<td colspan='3' bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-            echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total)."</b>"."</td>";
+            echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
 
             echo "</tr>";
 
@@ -98,3 +98,11 @@ if($act == 'update')
         </tr>
     </table>
 </form>
+
+<script type="text/javascript">
+     function num() {
+    var element = document.getElementById('input-num');
+    element.value = element.value.replace(/[^0-9]+/, '');
+  };
+
+</script>
